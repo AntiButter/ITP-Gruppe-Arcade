@@ -1,2 +1,2 @@
 # ITP-Gruppe-Arcade
-Scrum-Master hackelt nix
+Your're fired!
