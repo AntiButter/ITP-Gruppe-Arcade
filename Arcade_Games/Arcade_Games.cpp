@@ -15,7 +15,13 @@ int main()
     std::cout << "Lercher\n";
     std::cout << "Dorian\n";
     std::cout << "Test";
-
+    int poop = 0;
+    //I want to poop three times a day.
+    while (poop != 3)
+    {
+        poop++;
+        std::cout << "I just pooped";
+    }
 }
 
 // Tips for Getting Started:
