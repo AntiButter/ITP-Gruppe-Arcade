@@ -1,2 +1,6 @@
 ﻿  main.cpp
-  Hub.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\Hub.exe
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\main.cpp(17,2): error C2065: 'accept': undeclared identifier
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\main.cpp(18,9): error C2059: syntax error: '=='
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\main.cpp(23,6): error C2065: 'accept': undeclared identifier
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\main.cpp(25,33): error C2653: 'oasencrawler': is not a class or namespace name
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\main.cpp(25,17): error C2065: 'playoasencrawler': undeclared identifier
