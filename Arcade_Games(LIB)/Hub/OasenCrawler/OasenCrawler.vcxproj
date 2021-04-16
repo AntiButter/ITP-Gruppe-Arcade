@@ -24,6 +24,7 @@
     <ProjectGuid>{cef56b1a-332c-440a-a0e5-ef98a70c1b71}</ProjectGuid>
     <RootNamespace>OasenCrawler</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Games</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
