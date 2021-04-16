@@ -1,0 +1,3 @@
+﻿  OasenCrawler.cpp
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler.cpp(264,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  OasenCrawler.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\OasenCrawler.lib

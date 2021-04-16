@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Arcade_Games"
+    "\\Arcade_Games",
+    "\\StaticLIb Test",
+    "\\StaticLIb Test\\Engine",
+    "\\StaticLIb Test\\Engine\\src",
+    "\\StaticLIb Test\\Game"
   ],
-  "SelectedNode": "\\Arcade_Games\\Arcade_Games.cpp",
+  "SelectedNode": "\\StaticLIb Test\\Engine\\src",
   "PreviewInSolutionExplorer": false
 }
