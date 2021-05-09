@@ -1,0 +1,8 @@
+DeepMiner
+200
+OasenCrawler
+50
+MarioKart
+700
+Zelda
+999

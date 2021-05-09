@@ -1,17 +1,20 @@
-#include "OasenCrawler.h"
 #include <iostream>
+#include "OasenCrawler.h"
+#include "HighScores.h"
 
 int main()
 {
 	//oasenCrawler::PrintMessage();
 	//oasenCrawler::PlayOasenCrawler();
 	//std::cout << "Fertig";
+
+	Highscores* scores = new Highscores();
 	
 	int selected = 0;
 	char confirm = 'z';
 	while (selected < 3 && confirm != 'q')
 	{
-		system("cls");
+		//system("cls");
 		std::cout << " WELCOME BACK" << std::endl;
 		std::cout << std::endl << "   Select Game: " << std::endl;
 		if (selected <= 0)
@@ -52,5 +55,6 @@ int main()
 			selected--;
 		}
 	}
+	delete scores;
 	return 0;
 }
