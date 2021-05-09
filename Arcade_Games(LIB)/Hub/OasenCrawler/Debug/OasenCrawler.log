@@ -1,4 +1,2 @@
-﻿G:\Program Files (x86)\Visual Studio\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (OasenCrawler.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  OasenCrawler.cpp
-C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler.cpp(264,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  OasenCrawler.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\Games.lib
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: Das Zwischenverzeichnis (Debug\) enthält freigegebene Dateien aus einem anderen Projekt (OasenCrawler.vcxproj). Dies kann zu einem falschen Bereinigungs- und Neuerstellungsverhalten führen.
+  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\Games.lib

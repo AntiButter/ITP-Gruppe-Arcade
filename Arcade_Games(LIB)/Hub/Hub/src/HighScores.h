@@ -14,10 +14,13 @@ public:
 
 	void printScores();
 
+	void printScoreSingle(int);
+
 	std::vector<std::string> gameNames;
 
 private:
 	//Für Name des Spielers Tupel benutzen oder neuer Vektor.
 	std::vector<std::string> gameScores;
+	std::vector<std::string> scoreNames;
 };
 
