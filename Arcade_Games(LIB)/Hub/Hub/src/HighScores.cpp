@@ -53,12 +53,6 @@ void Highscores::printScores()
 {
 	system("cls");
 	std::cout << "Highscores:";
-	/*
-	for (int i = gameScores.size() - 1; i > -1; i--)
-	{
-		std::cout<< "\n\n" << gameNames[i]<< " - " << gameScores[i] << " erzielt von " << scoreNames[i];
-	}
-	*/
 	for (int i = 0; i < gameScores.size(); i++)
 	{
 		std::cout << "\n\n" << gameNames[i] << " - " << gameScores[i] << " erzielt von " << scoreNames[i];
@@ -69,4 +63,22 @@ void Highscores::printScoreSingle(int i)
 {
 	std::cout << " < -";
 	std::cout << "	Highscore: " << gameScores[i] << " erzielt von " << scoreNames[i];
+}
+
+void Highscores::saveScore(int gameNumber, int score)
+{
+	gameScores[gameNumber] = std::to_string(score);
+	std::cout << "Sie haben einen neuen Highscore erzielt !\n\nBitte geben Sie ihren Namen ein: ";
+	std::cin >> scoreNames[gameNumber];
+
+	std::string filePath = queryFileName();
+	std::ofstream outfile(filePath);
+	int i = 0;
+	while (i < gameNames.size())
+	{
+		outfile << gameNames[i] << "\n" << gameScores[i] << "\n" << scoreNames[i] << "\n";
+		i++;
+	}
+
+	outfile.close();
 }

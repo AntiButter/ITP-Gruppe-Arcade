@@ -22,16 +22,16 @@ int main()
 		}
 		std::cout << std::endl << "Select Game: (W = UP, S = DOWN, Y = CONFIRM, Q = QUIT)" << std::endl;
 
-		std::cout << std::endl << "     Oasen_Crawler"; selected == 0 ? scores->printScoreSingle(0) : void();
-		std::cout << std::endl << "     Deep_Miner"; selected == 1 ? scores->printScoreSingle(1) : void();
-		std::cout << std::endl << "     Fight_Club"; selected == 2 ? scores->printScoreSingle(2) : void();
+		std::cout << std::endl << "     Oasen_Crawler"; selected == 0 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     Fight_Club"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Show Highscores"; selected == 3 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
 
 		confirm = getchar();
 		if (confirm == 'y')
 		{
-			if(selected == 0) { oasenCrawler::PlayOasenCrawler(); }
+			if (selected == 0) { oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, 500/*returned value*/); } //im Oasencrawler anpassen dass der score returned wird  //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
 			if (selected == 1) { std::cout << "**Content will be available soon**"; }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
 			if (selected == 3) { scores->printScores(); }

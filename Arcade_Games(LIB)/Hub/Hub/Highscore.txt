@@ -1,6 +1,6 @@
 Oasen Crawler
-50
-Hans
+500
+asd
 Deep Miner
 200000
 Peter

@@ -16,6 +16,8 @@ public:
 
 	void printScoreSingle(int);
 
+	void saveScore(int,int);
+
 	std::vector<std::string> gameNames;
 
 private:
