@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 #include "Gamble.h"
 
 Gamble::Gamble()
@@ -42,9 +43,81 @@ void Gamble::savePoints()
 void Gamble::slotMachine()
 {
 	srand(time(NULL));
+	int x = 0;
+	bool skip = false;
 
-	std::cout << (char)218 << "\n" << (char)179 << "\n" << (char)192 << std::endl;
+	for (int loop = 0; loop < 50; loop++)
+	{
+		system("cls");
+		for (int i = 0; i < 9; i++)
+		{
+			if (i == 0)
+			{
+				std::cout << (char)218;
+				for (int z = 0; z < 19; z++)
+				{
+					std::cout << (char)196;
+				}
+				std::cout << (char)191;
+				std::cout << std::endl;
+				continue;
+			}
 
+			if (i == 8)
+			{
+				std::cout << (char)192;
+				for (int z = 0; z < 19; z++)
+				{
+					std::cout << (char)196;
+				}
+				std::cout << (char)217;
+				std::cout << std::endl;
+				continue;
+			}
+
+			for (int j = 0; j < 21; j++)
+			{
+				if (j == 0)
+				{
+					std::cout << (char)179;
+					continue;
+				}
+				if (j == 20)
+				{
+					std::cout << (char)179;
+					continue;
+				}
+
+				if (i == 2 || i == 4 || i == 6)
+				{
+					if (j == 3 || j == 8 || j == 13) {
+
+						int zahl = randomValue();
+						if (zahl < 10)
+							std::cout << " " << zahl;
+						else
+							std::cout << zahl;
+
+					}
+					else
+					{
+						std::cout << " ";
+					}
+					if (j == 16)
+					{
+						std::cout << (char)179;
+						break;
+					}
+				}
+				else
+				{
+					std::cout << " ";
+				}
+			}
+			std::cout << std::endl;
+		}
+		Sleep(50);
+	}
 	//mittlere Reihe Weis, äußere grau
 }
 
