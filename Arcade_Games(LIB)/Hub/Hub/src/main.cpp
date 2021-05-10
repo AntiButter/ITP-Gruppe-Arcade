@@ -1,6 +1,7 @@
 #include <iostream>
 #include "OasenCrawler.h"
 #include "HighScores.h"
+#include "Gamble.h"
 
 int main()
 {
@@ -9,11 +10,12 @@ int main()
 	//std::cout << "Fertig";
 
 	Highscores* scores = new Highscores();
+	Gamble* gamble = new Gamble();
 	
 	int selected = 0;
 	char confirm = 'z';
 	bool back = false;
-	while (selected < 4 && confirm != 'q')
+	while (confirm != 'q')
 	{
 		system("cls");
 		if (back == true) {
@@ -26,7 +28,10 @@ int main()
 		std::cout << std::endl << "     Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Fight_Club"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Show Highscores"; selected == 3 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Slot Machine"; selected == 4 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
+
+		gamble->showPoints();
 
 		confirm = getchar();
 		if (confirm == 'y')
@@ -35,13 +40,14 @@ int main()
 			if (selected == 1) { std::cout << "**Content will be available soon**"; }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
 			if (selected == 3) { scores->printScores(); }
+			if (selected == 4) { gamble->slotMachine(); }
 			confirm = getchar();
 			confirm = getchar();
 			back = true;
 		}
 		if (confirm == 's')
 		{
-			if (selected != 3) //increase when adding games
+			if (selected != 4) //increase when adding games
 				selected++;
 		}
 		else if (confirm == 'w')
@@ -57,5 +63,6 @@ int main()
 		*/
 	}
 	delete scores;
+	delete gamble;
 	return 0;
 }

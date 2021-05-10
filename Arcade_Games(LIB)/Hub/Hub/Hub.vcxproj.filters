@@ -21,9 +21,15 @@
     <ClCompile Include="src\HighScores.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Gamble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HighScores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gamble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
