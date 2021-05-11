@@ -40,11 +40,43 @@ void Gamble::savePoints()
 	outfile.close();
 }
 
-void Gamble::slotMachine()
+void Gamble::slotMachine(int einsatz)
 {
+	//check ob Einsatz nicht größer als Punkte ist bei einer WIederholung
+	system("cls");
+	if(einsatz != 0 && einsatz > points)
+	{
+		std::cout << "Sie besitzen leider zu wenig Punkte fuer diesen Einsatz !" << std::endl;
+		einsatz = 0;
+	}
+
+	if(points == 0)
+	{
+		std::cout << "Ohne Punkte koennen Sie nicht gamblen! \nBitte spielen Sie zuerst eines unserer tollen Spiele um Punkte zu erlangen !" << std::endl;
+		return;
+	}
+
+	if (einsatz == 0)
+	{
+		std::cout << "Bitte geben Sie ihren Einsatz an !" << " (derzeiter Credit - Stand: " << points << ")" << std::endl;
+		bool looop = false;
+		do
+		{
+			if(looop == true)
+			{
+				std::cout << "Fehlerhafte Eingabe! \nSie haben entweder einen falschen Wert eingegeben oder nicht genuegend Punkte dafuer \n(derzeiter Credit-Stand: "<< points << ")"<< std::endl;
+				std::cin.clear(); //this and line below are to prevent endless loop on wrong input (letters)
+				std::cin.ignore(10, '\n');
+			}
+			std::cin >> einsatz;
+			looop = true;
+		} while (einsatz > points || einsatz == 0);
+	}
+
 	srand(time(NULL));
 	int x = 0;
 	bool skip = false;
+	int array1[3] = {}, array2[3] = {}, array3[3] = {};
 
 	for (int loop = 0; loop < 50; loop++)
 	{
@@ -92,12 +124,97 @@ void Gamble::slotMachine()
 				{
 					if (j == 3 || j == 8 || j == 13) {
 
+						if(loop > 29)
+						{
+							if (j == 3 && i == 2)
+							{
+								if (array1[0] < 10)
+									std::cout << " " << array1[0];
+								else
+									std::cout << array1[0];
+								continue;
+							}
+							if (j == 3 && i == 4)
+							{
+								if (array1[1] < 10)
+									std::cout << " " << array1[1];
+								else
+									std::cout << array1[1];
+								continue;
+							}
+							if (j == 3 && i == 6)
+							{
+								if (array1[2] < 10)
+									std::cout << " " << array1[2];
+								else
+									std::cout << array1[2];
+								continue;
+							}
+						}
+
+						if (loop > 39)
+						{
+							if (j == 8 && i == 2)
+							{
+								if (array2[0] < 10)
+									std::cout << " " << array2[0];
+								else
+									std::cout << array2[0];
+								continue;
+							}
+							if (j == 8 && i == 4)
+							{
+								if (array2[1] < 10)
+									std::cout << " " << array2[1];
+								else
+									std::cout << array2[1];
+								continue;
+							}
+							if (j == 8 && i == 6)
+							{
+								if (array2[2] < 10)
+									std::cout << " " << array2[2];
+								else
+									std::cout << array2[2];
+								continue;
+							}
+						}
+
 						int zahl = randomValue();
 						if (zahl < 10)
 							std::cout << " " << zahl;
 						else
 							std::cout << zahl;
 
+						if(loop == 29)
+						{
+							if (j == 3 && i == 2)
+								array1[0] = zahl;
+							if (j == 3 && i == 4)
+								array1[1] = zahl;
+							if (j == 3 && i == 6)
+								array1[2] = zahl;
+						}
+
+						if (loop == 39)
+						{
+							if (j == 8 && i == 2)
+								array2[0] = zahl;
+							if (j == 8 && i == 4)
+								array2[1] = zahl;
+							if (j == 8 && i == 6)
+								array2[2] = zahl;
+						}
+
+						if (loop == 49)
+						{
+							if (j == 13 && i == 2)
+								array3[0] = zahl;
+							if (j == 13 && i == 4)
+								array3[1] = zahl;
+							if (j == 13 && i == 6)
+								array3[2] = zahl;
+						}
 					}
 					else
 					{
@@ -118,7 +235,8 @@ void Gamble::slotMachine()
 		}
 		Sleep(50);
 	}
-	//mittlere Reihe Weis, äußere grau
+	
+	winChecker(array1, array2, array3,einsatz);
 }
 
 int Gamble::randomValue()
@@ -144,5 +262,57 @@ int Gamble::randomValue()
 	return symbol;
 }
 
+void Gamble::winChecker(int* array1, int* array2, int* array3, int einsatz)
+{
+	//Abziehen des Einsatzes
+	points -= einsatz;
 
-//Funktion Punkte auslesen
+	bool won = false;
+
+	if (array1[0] == array2[0] && array2[0] == array3[0])
+	{
+		points += einsatz * array1[0];
+		std::cout << "Sie haben "<< einsatz * array1[0]<< " Punkte in Linie 1 gewonnen"<< std::endl;
+		won= true;
+	}
+	if (array1[1] == array2[1] && array2[1] == array3[1])
+	{
+		points += einsatz * array1[1];
+		std::cout << "Sie haben " << einsatz * array1[1] << " Punkte in Linie 2 gewonnen" << std::endl;
+		won = true;
+	}
+	if (array1[2] == array2[2] && array2[2] == array3[2])
+	{
+		points += einsatz * array1[2];
+		std::cout << "Sie haben " << einsatz * array1[2] << " Punkte in Linie 3 gewonnen" << std::endl;
+		won = true;
+	}
+
+	if(won == false)
+		std::cout << "Sie haben leider nichts gewonnen :(" << std::endl;
+
+	savePoints();
+
+	std::cout << "\nIhr neuer Credit-Stand betraegt: " << points << std::endl;
+
+	std::cout << "\nWollen Sie noch einmal ihr Glueck versuchen ? \n(y = noch einmal, r = noch einmal mit dem selbem Einsatz ("<< einsatz <<"), n = nein)" << std::endl;
+
+	std::cin.clear(); //this and line below are to prevent endless loop on wrong input (letters)
+	std::cin.ignore(10, '\n');
+
+	char input = getchar();
+
+	while (input != 'y' && input != 'r' && input != 'n')
+	{
+		std::cout << "Fehler ! Bitte geben Sie einen akzeptierten Input an !" << std::endl;
+		getchar();
+		input = getchar();
+	}
+
+	if (input == 'y')
+		slotMachine(0);
+	if (input == 'r')
+		slotMachine(einsatz);
+	if (input == 'n')
+		return;
+}

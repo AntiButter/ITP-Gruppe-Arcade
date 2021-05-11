@@ -23,9 +23,11 @@ public:
 
 	void savePoints();
 
-	void slotMachine();
+	void slotMachine(int);
 
 	int randomValue();
+
+	void winChecker(int*,int*,int*,int);
 
 private:
 	int points;

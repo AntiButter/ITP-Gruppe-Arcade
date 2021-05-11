@@ -40,8 +40,9 @@ int main()
 			if (selected == 1) { std::cout << "**Content will be available soon**"; }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
 			if (selected == 3) { scores->printScores(); }
-			if (selected == 4) { gamble->slotMachine(); }
+			if (selected == 4) { gamble->slotMachine(0); }
 			confirm = getchar();
+			std::cout << "\nPress Enter to continue" << std::endl;
 			confirm = getchar();
 			back = true;
 		}
@@ -49,11 +50,15 @@ int main()
 		{
 			if (selected != 4) //increase when adding games
 				selected++;
+			else
+				selected = 0;
 		}
 		else if (confirm == 'w')
 		{
-			if(selected != 0)
+			if (selected != 0)
 				selected--;
+			else
+				selected = 4;
 		}
 
 		//clears rest input //falls wir system cls nicht wieder einkommentieren
