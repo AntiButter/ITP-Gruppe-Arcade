@@ -27,6 +27,7 @@ int main()
 		std::cout << std::endl << "     Oasen_Crawler"; selected == 0 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Fight_Club"; selected == 2 ? scores->printScoreSingle(selected) : void();
+		//add new games here and increase value for highscore / slot machine
 		std::cout << std::endl << "     Show Highscores"; selected == 3 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl << "     Slot Machine"; selected == 4 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
@@ -39,6 +40,7 @@ int main()
 			if (selected == 0) { oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, 500/*returned value*/); } //im Oasencrawler anpassen dass der score returned wird  //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
 			if (selected == 1) { std::cout << "**Content will be available soon**"; }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
+			//add new games here and increase value for highscore / slot machine
 			if (selected == 3) { scores->printScores(); }
 			if (selected == 4) { gamble->slotMachine(0); }
 			confirm = getchar();
@@ -58,7 +60,7 @@ int main()
 			if (selected != 0)
 				selected--;
 			else
-				selected = 4;
+				selected = 4; //increase when adding games
 		}
 
 		//clears rest input //falls wir system cls nicht wieder einkommentieren

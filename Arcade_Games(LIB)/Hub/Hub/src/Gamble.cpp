@@ -42,6 +42,10 @@ void Gamble::savePoints()
 
 void Gamble::slotMachine(int einsatz)
 {
+	//um die Färbung zu ermöglichen
+	HANDLE hConsole;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
 	//check ob Einsatz nicht größer als Punkte ist bei einer WIederholung
 	system("cls");
 	if(einsatz != 0 && einsatz > points)
@@ -179,13 +183,13 @@ void Gamble::slotMachine(int einsatz)
 								continue;
 							}
 						}
-
+						//SetConsoleTextAttribute(hConsole, 10);
 						int zahl = randomValue();
 						if (zahl < 10)
 							std::cout << " " << zahl;
 						else
 							std::cout << zahl;
-
+						//SetConsoleTextAttribute(hConsole, 7);
 						if(loop == 29)
 						{
 							if (j == 3 && i == 2)
