@@ -1,5 +1,6 @@
 #include <iostream>
-#include "OasenCrawler.h"
+#include "OasenCrawler/OasenCrawler.h"
+#include "DeepMiner/DeepMiner.h"
 #include "HighScores.h"
 #include "Gamble.h"
 
@@ -38,7 +39,7 @@ int main()
 		if (confirm == 'y')
 		{
 			if (selected == 0) { oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, 500/*returned value*/); } //im Oasencrawler anpassen dass der score returned wird  //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
-			if (selected == 1) { std::cout << "**Content will be available soon**"; }
+			if (selected == 1) { deepMiner::PlayDeepMiner(); scores->saveScore(selected, 500); }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
 			//add new games here and increase value for highscore / slot machine
 			if (selected == 3) { scores->printScores(); }

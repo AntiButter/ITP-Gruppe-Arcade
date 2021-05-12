@@ -1,2 +1,12 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: Das Zwischenverzeichnis (Debug\) enthält freigegebene Dateien aus einem anderen Projekt (OasenCrawler.vcxproj). Dies kann zu einem falschen Bereinigungs- und Neuerstellungsverhalten führen.
-  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\Games.lib
+﻿D:\Programme\Microsoft VS Studio\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: Das Zwischenverzeichnis (Debug\) enthält freigegebene Dateien aus einem anderen Projekt (OasenCrawler.vcxproj). Dies kann zu einem falschen Bereinigungs- und Neuerstellungsverhalten führen.
+  BotHighest.cpp
+  BotRandom.cpp
+  Bots.cpp
+  BotTriple.cpp
+  DeepMiner.cpp
+  Player.cpp
+  World.cpp
+C:\Users\jrath\OneDrive\FH Technikum Wien\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(19,15): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+C:\Users\jrath\OneDrive\FH Technikum Wien\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(38,15): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+  Code wird generiert...
+  OasenCrawler.vcxproj -> C:\Users\jrath\OneDrive\FH Technikum Wien\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Debug\Games.lib

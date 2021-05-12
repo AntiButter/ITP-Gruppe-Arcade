@@ -140,10 +140,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\OasenCrawler.h" />
+    <ClInclude Include="src\DeepMiner\BotHighest.h" />
+    <ClInclude Include="src\DeepMiner\BotRandom.h" />
+    <ClInclude Include="src\DeepMiner\Bots.h" />
+    <ClInclude Include="src\DeepMiner\BotTriple.h" />
+    <ClInclude Include="src\DeepMiner\DeepMiner.h" />
+    <ClInclude Include="src\DeepMiner\Player.h" />
+    <ClInclude Include="src\DeepMiner\World.h" />
+    <ClInclude Include="src\OasenCrawler\OasenCrawler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\OasenCrawler.cpp" />
+    <ClCompile Include="src\DeepMiner\BotHighest.cpp" />
+    <ClCompile Include="src\DeepMiner\BotRandom.cpp" />
+    <ClCompile Include="src\DeepMiner\Bots.cpp" />
+    <ClCompile Include="src\DeepMiner\BotTriple.cpp" />
+    <ClCompile Include="src\DeepMiner\DeepMiner.cpp" />
+    <ClCompile Include="src\DeepMiner\Player.cpp" />
+    <ClCompile Include="src\DeepMiner\World.cpp" />
+    <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
