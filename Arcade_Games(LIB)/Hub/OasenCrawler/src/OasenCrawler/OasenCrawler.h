@@ -2,6 +2,5 @@
 
 namespace oasenCrawler
 {
-	void PrintMessage();
-	void PlayOasenCrawler();
+	int PlayOasenCrawler();
 }

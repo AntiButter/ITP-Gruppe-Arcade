@@ -39,6 +39,15 @@
     <ClInclude Include="src\DeepMiner\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\OasenCrawler\player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OasenCrawler\monster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OasenCrawler\gameboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp">
@@ -63,6 +72,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\DeepMiner\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OasenCrawler\player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OasenCrawler\monster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OasenCrawler\gameboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

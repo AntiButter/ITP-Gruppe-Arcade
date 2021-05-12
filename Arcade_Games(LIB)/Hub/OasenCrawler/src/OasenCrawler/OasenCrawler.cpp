@@ -1,392 +1,277 @@
+#include <iostream>
+#include "player.h"
+#include "gameboard.h"
+#include "monster.h"
+#include <time.h>
+#include <conio.h>
+#include <string>
+#include <windows.h>
 #include "OasenCrawler.h"
 
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <string>
+//todo match history
 
-using namespace std;
+void printFightMessage(int fmsg) {
 
-typedef struct player
-{
-    int xPosition;
-    int yPosition;
-    int lifePoints;
-    int relicCount;
-}player;
+    switch (fmsg) {
+    case 0:
+        //std::cout << "Nothing happened" << std::endl;
+        break;
+    case 1:
+        std::cout << "You were too weak" << std::endl;
+        break;
+    case 2:
+        std::cout << "You were stronger" << std::endl;
+        break;
+    case 3:
+        std::cout << "Defending yourself failed" << std::endl;
+        break;
+    case 4:
+        std::cout << "Successfully defended" << std::endl;
+        break;
+    case 5:
+        std::cout << "You were too slow" << std::endl;
+        break;
+    case 6:
+        std::cout << "Successfully escaped" << std::endl;
+        break;
+    default:
+        std::cout << "errorpfm" << std::endl;
+        break;
+    }
 
-typedef struct recording
-{
-    int turn;
-    int x;
-    int y;
-    int currentField;
-    int xHunter;
-    int yHunter;
-    int lifes;
-    int relics;
-    int maxRelicsRecording;
-    struct recording* next;
-}recording;
+}
 
-typedef struct playField
-{
-    int field[5][5];
-}playField;
+int checkInteraction(player* p, gameboard* gb) {
 
-playField oase;
-player indi;
+    std::cout << "moin" << std::endl;
 
-int maxRelics(playField oase)
-{
-    int relics = 0;
-    for (int i = 0; i <= 4; ++i)
-    {
-        for (int j = 0; j <= 4; ++j)
-        {
-            if (oase.field[i][j] == 3)
-            {
-                relics++;
+    if (gb->GetValue(p->GetPy(), p->GetPx()) == 1) {
+        return 0;
+    }
+    else if (gb->GetValue(p->GetPy(), p->GetPx()) == 2) {
+        int rnum = rand() % 3;
+
+        if (rnum == 0) {
+            rnum = rand() % 10;
+            if (rnum > p->GetStrength()) {
+                p->SetHp(p->GetHp() - 1);
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 1;
+            }
+            else {
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 2;
             }
         }
-    }
-    return relics;
-}
-
-void printStats(player indi, playField oase, int relics)
-{
-    cout << "Lifes: " << indi.lifePoints << "  Relics found: " << indi.relicCount << "/" << relics << endl;
-    if (oase.field[indi.yPosition][indi.xPosition] == 0)
-    {
-        cout << "Environment: Dessert" << endl;
-    }
-    if (oase.field[indi.yPosition][indi.xPosition] == 1)
-    {
-        cout << "Environment: Danger near you" << endl;
-    }
-    if (oase.field[indi.yPosition][indi.xPosition] == 2)
-    {
-        cout << "Environment: Spring" << endl;
-    }
-    if (oase.field[indi.yPosition][indi.xPosition] == 3)
-    {
-        cout << "Environment: Secret Trapdoor discovered" << endl;
-    }
-}
-
-void printRecordingStats(recording* current)
-{
-    cout << "Lifes: " << current->lifes << "  Relics found: " << current->relics << "/" << current->maxRelicsRecording << endl;
-    if (current->currentField == 0)
-    {
-        cout << "Environment: Dessert" << endl;
-    }
-    if (current->currentField == 1)
-    {
-        cout << "Environment: Danger near you" << endl;
-    }
-    if (current->currentField == 2)
-    {
-        cout << "Environment: Spring" << endl;
-    }
-    if (current->currentField == 3)
-    {
-        cout << "Environment: Secret Trapdoor discovered" << endl;
-    }
-}
-
-void printPlayField(int xHunter, int yHunter, int xIndi, int yIndi)
-{
-    for (int i = 0; i <= 4; ++i)
-    {
-        cout << endl;
-        for (int j = 0; j <= 4; ++j)
-        {
-            if (j == xHunter && i == yHunter)
-            {
-                cout << "[H]";
+        else if (rnum == 1) {
+            rnum = rand() % 10;
+            if (rnum > p->GetDefense()) {
+                p->SetHp(p->GetHp() - 1);
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 3;
             }
-            else if (j == xIndi && i == yIndi)
-            {
-                cout << "[X]";
+            else {
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 4;
             }
-            else
-            {
-                cout << "[ ]";
+        }
+        else if (rnum == 2) {
+            rnum = rand() % 10;
+            if (rnum > p->GetAgility()) {
+                p->SetHp(p->GetHp() - 1);
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 5;
             }
-
+            else {
+                gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+                return 6;
+            }
         }
+
     }
-    cout << endl;
+    else if (gb->GetValue(p->GetPy(), p->GetPx()) == 3) {
+        p->SetHp(p->GetHp() + 1);
+        gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+        return 0;
+    }
+    else if (gb->GetValue(p->GetPy(), p->GetPx()) == 4) {
+        gb->SetRelics(gb->GetRelics() - 1);
+        p->SetRelics(p->GetRelics() + 1);
+        gb->SetValue(p->GetPy(), p->GetPx(), gameboard::leer);
+        return 0;
+    }
+
 }
 
+int terminate(player* p, gameboard* gb, monster* m, int turn) {
 
-player movehunter(player hunter, player indi)
-{
-    if (hunter.xPosition == indi.xPosition && hunter.yPosition == indi.yPosition)
-    {
-        hunter.lifePoints++;
 
-        return hunter;
-    }
-    else if (hunter.xPosition < indi.xPosition)
-    {
-        hunter.xPosition++;
-    }
-    else if (hunter.xPosition > indi.xPosition)
-    {
-        hunter.xPosition--;
-    }
-    else if (hunter.yPosition > indi.yPosition)
-    {
-        hunter.yPosition--;
-    }
-    else if (hunter.yPosition < indi.yPosition)
-    {
-        hunter.yPosition++;
-    }
-    if (hunter.xPosition == indi.xPosition && hunter.yPosition == indi.yPosition)
-    {
-        hunter.lifePoints = 1;
-    }
-    return hunter;
-}
-
-playField checksurrounding(playField oase, int y, int x)
-{
-    if (oase.field[y][x] == 0) { return oase; }
-    if (oase.field[y][x] == 1)
-    {
-        if (rand() % 6 == 3) //~16%
-        {
-            indi.lifePoints--;
-            cout << "ouch! You just lost a Life" << endl;
-        }
-        oase.field[y][x] = 0;
-    }
-    if (oase.field[y][x] == 2)
-    {
-        if (indi.lifePoints < 5)
-        {
-            indi.lifePoints++;
-        }
-        oase.field[y][x] = 0;
-    }
-    if (oase.field[y][x] == 3)
-    {
-        indi.relicCount++;
-        cout << "Congratulations you found Relic Number: " << indi.relicCount << endl;
-        oase.field[y][x] = 0;
-    }
-    return oase;
-}
-
-playField processTurn(playField oase, int y, int x, player hunter, int relics)
-{
-    printPlayField(hunter.xPosition, hunter.yPosition, indi.xPosition, indi.yPosition);
-    printStats(indi, oase, relics);
-    oase = checksurrounding(oase, indi.yPosition, indi.xPosition);
-
-    return oase;
-}
-
-recording* recordTurn(recording* head, playField oase, player indi, player hunter, char movement)
-{
-    recording* current = head;
-    recording* prevoius = NULL;
-    while (current != NULL)
-    {
-        prevoius = current;
-        current = current->next;
-    }
-    recording* newTurn = (recording*)malloc(sizeof(recording));
-    newTurn->lifes = indi.lifePoints;
-    newTurn->relics = indi.relicCount;
-    newTurn->x = indi.xPosition;
-    newTurn->y = indi.yPosition;
-    newTurn->turn += 1;
-    newTurn->xHunter = hunter.xPosition;
-    newTurn->yHunter = hunter.yPosition;
-    newTurn->maxRelicsRecording = head->maxRelicsRecording;
-    newTurn->currentField = oase.field[indi.yPosition][indi.xPosition];
-    newTurn->next = NULL;
-    prevoius->next = newTurn;
-    return head;
-}
-
-void printRecording(recording* head)
-{
-    recording* current = head;
-    char input;
-    while (current != NULL)
-    {
-        cout << "Replay Mode" << endl;
-        cout << endl;
-        cout << "Enter '+' = next, 'x' = skip" << endl;
-        cin >> input;
+    if (p->GetHp() == 0) {
         system("CLS");
-        if (input == '+')
-        {
-            printPlayField(current->xHunter, current->yHunter, current->x, current->y);
-            printRecordingStats(current);
-        }
-        if (input == 'x')
-        {
-            break;
-        }
-        current = current->next;
+        std::cout << "Too bad, you lost all HP!" << std::endl;
+        return 1;
+    }
+    else if (gb->GetRelics() == 0) {
+        system("CLS");
+        std::cout << "Congratulations, you found all relics!" << std::endl;
+        return 2;
+    }
+    else if (m->GetHp() == 0) {
+        system("CLS");
+        std::cout << "Too bad, the monster has caught you!" << std::endl;
+        return 1;
+    }
+    else if (turn == 40) {
+        system("CLS");
+        std::cout << "You took too long to win the game!" << std::endl;
+        return 1;
+    }
+    else {
+        return 0;
     }
 }
 
-void freeRecording(recording* head)
-{
-    recording* waste = NULL;
-    while (head != NULL)
+
+namespace oasenCrawler {
+
+
+    int PlayOasenCrawler()
     {
-        waste = head;
-        head = head->next;
-        free(waste);
-    }
-}
+        int fmsg = 0;
+        char cont = 'a';
+        int level = 0;
 
-
-namespace oasenCrawler
-{
-	void PrintMessage()
-	{
-		std::cout << "Hello World!" << std::endl;
-	}
-    using namespace std;
-
-    void PlayOasenCrawler()
-    {
-        //set rand() seed
         srand(time(NULL));
-        //Variables
-        player hunter;
-        hunter.yPosition = rand() % 5 + 6;
-        hunter.xPosition = rand() % 5 + 6;
-        hunter.lifePoints = 0;
-        int relics = 0;
-        indi.lifePoints = 5;
-        indi.relicCount = 0;
-        indi.xPosition = 0;
-        indi.yPosition = 0;
-        char movement = '-';
-        int randomNumber;
 
-        for (int i = 0; i <= 4; ++i)
-        {
-            for (int j = 0; j <= 4; ++j)
-            {
-                randomNumber = rand() % 100;
-                if (randomNumber <= 40) { oase.field[i][j] = 0; }                          //Leer = 40%
-                if (randomNumber >= 40 && randomNumber <= 60) { oase.field[i][j] = 1; }    //Gefahr = 40%
-                if (randomNumber >= 80 && randomNumber <= 90) { oase.field[i][j] = 2; }    //Brunnen = 10%
-                if (randomNumber >= 90 && randomNumber <= 100) { oase.field[i][j] = 3; }   //Relikt = 10%
+        do {
+            int turn = 0;
+            int checkstatus = 0;
+            level++;
+
+            player* p = new player(5);
+
+            int mx = rand() % 2 + 3;
+            int my = rand() % 2 + 3;
+            monster* m = new monster(mx, my);
+
+
+            gameboard* gb = new gameboard(p, m);
+
+            std::string msg = "Use W,A,S,D to move around\nFind all Relics to win the game\nYou lose:\n-if your HP drops to 0\n-after 40 turns\n-if the monster catches you";
+
+
+            gb->generateBoard();
+
+
+            while (true) {
+                system("CLS");
+
+                gb->printBoard();
+
+                p->printStats();
+                std::cout << "Level: " << level << std::endl;
+
+                printFightMessage(fmsg);
+                fmsg = 0;
+
+                std::cout << "Relics left: " << gb->GetRelics() << std::endl;
+
+                if (msg != "") {
+                    std::cout << msg << std::endl;
+                    msg = "";
+                }
+                char direction;
+                direction = _getch();
+
+                //Aktion je nach Eingabe
+                switch (direction) {
+                case 'w':
+                    if (p->GetPy() != 0) {
+                        p->SetPy(p->GetPy() - 1);
+                        turn++;
+                        m->MoveMonster(p->GetPx(), p->GetPy());
+                    }
+                    else {
+                        msg = "Moving up is not possible";
+                    }
+                    break;
+                case 's':
+                    if (p->GetPy() != 4) {
+                        p->SetPy(p->GetPy() + 1);
+                        turn++;
+                        m->MoveMonster(p->GetPx(), p->GetPy());
+                    }
+                    else {
+                        msg = "Moving down is not possible";
+                    }
+                    break;
+                case 'a':
+                    if (p->GetPx() != 0) {
+                        p->SetPx(p->GetPx() - 1);
+                        turn++;
+                        m->MoveMonster(p->GetPx(), p->GetPy());
+                    }
+                    else {
+                        msg = "Moving left is not possible";
+                    }
+                    break;
+                case 'd':
+                    if (p->GetPx() != 4) {
+                        p->SetPx(p->GetPx() + 1);
+                        turn++;
+                        m->MoveMonster(p->GetPx(), p->GetPy());
+                    }
+                    else {
+                        msg = "Moving right is not possible";
+                    }
+                    break;
+                default:
+                    msg = "Invalid input";
+                    continue;
+                }
+
+                fmsg = checkInteraction(p, gb);
+                checkstatus = terminate(p, gb, m, turn);
+                if (checkstatus == 0) {
+
+                }
+                else if (checkstatus == 1) {
+                    std::cout << "Your Score: " << level << std::endl;
+                    break;
+                }
+                else if (checkstatus == 2) {
+                    std::cout << "Do you want to continue playing? [y] [n]" << std::endl;
+
+                    while (cont != 'y' || cont != 'n') {
+                        cont = _getch();
+                        if (cont == 'y') {
+                            std::cout << "yeeee" << std::endl;
+                            break;
+                        }
+                        else if (cont == 'n') {
+                            std::cout << "noo" << std::endl;
+                            break;
+                        }
+                        else {
+                            std::cout << "invalid input" << std::endl;
+                        }
+                    }
+                    break;
+                }
             }
-        }
-        //start recording turns
-        recording* head = (recording*)malloc(sizeof(recording));
-        head->lifes = 5;
-        head->relics = 0;
-        head->x = 0;
-        head->y = 0;
-        head->turn = 1;
-        head->xHunter = hunter.xPosition;
-        head->yHunter = hunter.yPosition;
-        head->currentField = oase.field[indi.yPosition][indi.xPosition];
-        head->maxRelicsRecording = maxRelics(oase);
-        head->next = NULL;
-        //first time rendering game
-        printPlayField(hunter.xPosition, hunter.yPosition, indi.xPosition, indi.yPosition);
-        relics = maxRelics(oase);
-        printStats(indi, oase, relics);
-        while (movement != 'x' || indi.lifePoints == 0 || indi.relicCount == 1)
-        {
-            if (indi.lifePoints == 0)
-            {
-                cout << "====GAME=OVER====" << endl;
+            delete p;
+            delete m;
+            delete gb;
+            if (checkstatus == 1) {
                 break;
             }
-            if (hunter.lifePoints > 0)
-            {
-                cout << "====GAME=OVER====" << endl;
-                break;
-            }
-            if (indi.relicCount == relics)
-            {
-                cout << "====YOU=WON====" << endl;
-                break;
-            }
-            cin >> movement;
-            system("CLS");
-            switch (movement)
-            {
-            case 'w':   if (indi.yPosition == 0)
-            {
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-                continue;
-            }
-                    else
-            {
-                indi.yPosition--;
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-            }
-                    break;
-            case 's':   if (indi.yPosition == 4)
-            {
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-                continue;
-            }
-                    else
-            {
-                indi.yPosition++;
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-            }
-                    break;
-            case 'a':   if (indi.xPosition == 0)
-            {
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-                continue;
-            }
-                    else
-            {
-                indi.xPosition--;
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-            }
-                    break;
-            case 'd':    if (indi.xPosition == 4)
-            {
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-                continue;
-            }
-                    else
-            {
-                indi.xPosition++;
-                hunter = movehunter(hunter, indi);
-                oase = processTurn(oase, indi.yPosition, indi.xPosition, hunter, relics);
-                head = recordTurn(head, oase, indi, hunter, movement);
-            }
-                    break;
-            default: continue;
-            }
-        }
-        printRecording(head);
-        freeRecording(head);
+        } while (cont == 'y');
+
+
+
+        std::cout << "Stats here" << std::endl;
+
+        return level;
+
     }
 }

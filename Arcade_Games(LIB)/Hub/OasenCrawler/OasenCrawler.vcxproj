@@ -147,7 +147,10 @@
     <ClInclude Include="src\DeepMiner\DeepMiner.h" />
     <ClInclude Include="src\DeepMiner\Player.h" />
     <ClInclude Include="src\DeepMiner\World.h" />
+    <ClInclude Include="src\OasenCrawler\gameboard.h" />
+    <ClInclude Include="src\OasenCrawler\monster.h" />
     <ClInclude Include="src\OasenCrawler\OasenCrawler.h" />
+    <ClInclude Include="src\OasenCrawler\player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DeepMiner\BotHighest.cpp" />
@@ -157,7 +160,10 @@
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp" />
     <ClCompile Include="src\DeepMiner\Player.cpp" />
     <ClCompile Include="src\DeepMiner\World.cpp" />
+    <ClCompile Include="src\OasenCrawler\gameboard.cpp" />
+    <ClCompile Include="src\OasenCrawler\monster.cpp" />
     <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp" />
+    <ClCompile Include="src\OasenCrawler\player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
