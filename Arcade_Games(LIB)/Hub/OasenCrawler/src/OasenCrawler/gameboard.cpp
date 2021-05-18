@@ -1,7 +1,7 @@
 #include "gameboard.h"
 #include <iostream>
 #include <time.h>
-#include "player.h"
+#include "playerOC.h"
 
 gameboard::gameboard(player* pIn, monster* mIn)
 {

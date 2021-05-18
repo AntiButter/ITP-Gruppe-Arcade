@@ -1,5 +1,1 @@
-﻿Games.lib(World.obj) : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __cdecl Player::Player(void)" (??0Player@@QEAA@XZ)" in Funktion ""public: __cdecl World::World(int,int)" (??0World@@QEAA@HH@Z)".
-Games.lib(World.obj) : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __cdecl Player::~Player(void)" (??1Player@@QEAA@XZ)" in Funktion ""public: void * __cdecl Player::`scalar deleting destructor'(unsigned int)" (??_GPlayer@@QEAAPEAXI@Z)".
-Games.lib(World.obj) : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: void __cdecl Player::SetMiner(class Bots *)" (?SetMiner@Player@@QEAAXPEAVBots@@@Z)" in Funktion ""public: void __cdecl World::chooseBotsPlayer(void)" (?chooseBotsPlayer@World@@QEAAXXZ)".
-Games.lib(World.obj) : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: class Bots * __cdecl Player::GetMiner(void)const " (?GetMiner@Player@@QEBAPEAVBots@@XZ)" in Funktion ""public: void __cdecl World::endScreen(void)" (?endScreen@World@@QEAAXXZ)".
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Hub.exe : fatal error LNK1120: 4 nicht aufgelöste Externe
+﻿  Hub.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Hub.exe

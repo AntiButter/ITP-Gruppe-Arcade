@@ -1,6 +1,6 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
-#include "player.h"
+#include "playerOC.h"
 #include "monster.h"
 
 class gameboard

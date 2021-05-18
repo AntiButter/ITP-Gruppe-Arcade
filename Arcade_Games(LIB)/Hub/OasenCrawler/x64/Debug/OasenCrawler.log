@@ -1,9 +1,17 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1097,5): warning MSB8027: Mehrere Dateien mit dem Namen Player.cpp führen zu Ausgaben am selben Speicherort. Dadurch kann ein falsches Buildergebnis entstehen. Die betroffenen Dateien sind src\DeepMiner\Player.cpp, src\OasenCrawler\player.cpp.
-  OasenCrawler.cpp
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(144,19): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+﻿  BotHighest.cpp
+  BotRandom.cpp
+  Bots.cpp
+  BotTriple.cpp
+  DeepMiner.cpp
+  Player.cpp
+  World.cpp
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(19,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(38,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   gameboard.cpp
-  player.cpp
-  Code wird generiert...
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(104): warning C4715: "checkInteraction": Nicht alle Codepfade geben einen Wert zurück.
-x64\Debug\player.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
-  OasenCrawler.vcxproj -> C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+  monster.cpp
+  OasenCrawler.cpp
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(144,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  playerOC.cpp
+  Generating Code...
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(104): warning C4715: 'checkInteraction': not all control paths return a value
+  OasenCrawler.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
