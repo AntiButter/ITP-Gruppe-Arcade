@@ -29,6 +29,8 @@ public:
 
 	void winChecker(int*,int*,int*,int);
 
+	void addPoints(int);
+
 private:
 	int points;
 };

@@ -15,7 +15,7 @@
 #include "DeepMiner.h"
 
 namespace deepMiner {
-    int PlayDeepMiner()
+    std::vector<int> PlayDeepMiner()
     {
         bool loopDone;
         int yLength, xLength;
@@ -59,7 +59,16 @@ namespace deepMiner {
 
         } while (input != 'n');
 
-        return highscore;
+        std::vector<int> vector;
+        vector.push_back(highscore);
+        /*
+        vector.push_back(level * 5);
+        if (vector[1] > 100)
+            vector[1] = 100;
+        */
+        //Muss noch was für die Punkte überlegt werden
+        //noch nicht
+        return vector;
     }
 }
 

@@ -1,6 +1,6 @@
 Oasen Crawler
-500
-Dorian
+2
+Patrick
 Deep Miner
 200000
 Peter

@@ -1,6 +1,7 @@
 #pragma once
+#include <vector>
 
 namespace oasenCrawler
 {
-	int PlayOasenCrawler();
+	std::vector<int> PlayOasenCrawler();
 }

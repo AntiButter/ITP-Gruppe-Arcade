@@ -1,5 +1,6 @@
 #pragma once
+#include <vector>
 namespace deepMiner
 {
-	int PlayDeepMiner();
+	std::vector<int> PlayDeepMiner();
 }

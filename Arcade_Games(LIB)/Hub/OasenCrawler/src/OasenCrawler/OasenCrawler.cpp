@@ -135,7 +135,7 @@ int terminate(player* p, gameboard* gb, monster* m, int turn) {
 namespace oasenCrawler {
 
 
-    int PlayOasenCrawler()
+    std::vector<int> PlayOasenCrawler()
     {
         int fmsg = 0;
         char cont = 'a';
@@ -271,7 +271,14 @@ namespace oasenCrawler {
 
         std::cout << "Stats here" << std::endl;
 
-        return level;
+        //array für Übergabe //[0] = Score //[1] = Punkte für Gamble
+        std::vector<int> vector;
+        vector.push_back(level);
+        vector.push_back(level*5);
+        if (vector[1] > 100)
+            vector[1] = 100;
+
+        return vector;
 
     }
 }

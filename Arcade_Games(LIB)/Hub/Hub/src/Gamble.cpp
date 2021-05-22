@@ -320,3 +320,9 @@ void Gamble::winChecker(int* array1, int* array2, int* array3, int einsatz)
 	if (input == 'n')
 		return;
 }
+
+void Gamble::addPoints(int plus)
+{
+	points += plus;
+	savePoints();
+}
