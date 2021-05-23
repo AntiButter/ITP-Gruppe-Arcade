@@ -39,8 +39,7 @@ int monster::GetMy() {
 }
 
 void monster::MoveMonster(int px, int py) {
-    std::cout << "Monster X:" << this->mx << "Monster Y: " << this->my << std::endl;
-    std::cout << "Player X:" << px << "Player Y: " << py << std::endl;
+
     int rnum = 0;
 
     //testet ob sich das Monster links/rechts/über/unter dem Spieler befindet und
@@ -87,26 +86,21 @@ void monster::MoveMonster(int px, int py) {
     }
     else if (px == this->GetMx() && py < this->GetMy()) {
         //hoch
-        std::cout << "hoch" << std::endl;
         this->SetMy(this->GetMy() - 1);
     }
     else if (px == this->GetMx() && py > this->GetMy()) {
         //runter
-        std::cout << "runter" << std::endl;
         this->SetMy(this->GetMy() + 1);
     }
     else if (px < this->GetMx() && py == this->GetMy()) {
         //links
-        std::cout << "links" << std::endl;
         this->SetMx(this->GetMx() - 1);
     }
     else if (px > this->GetMx() && py == this->GetMy()) {
         //rechts
-        std::cout << "rechts" << std::endl;
         this->SetMx(this->GetMx() + 1);
     }
     else {
-        std::cout << "error" << std::endl;
     }
 
     //Spieler verliert das Spiel wenn ihn das Monster fängt

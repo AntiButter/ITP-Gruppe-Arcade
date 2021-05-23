@@ -1,3 +1,2 @@
-﻿  DeepMiner.cpp
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\DeepMiner.cpp(77,26): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+﻿  monster.cpp
+  OasenCrawler.vcxproj -> C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

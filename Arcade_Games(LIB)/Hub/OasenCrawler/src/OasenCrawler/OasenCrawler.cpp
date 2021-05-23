@@ -43,8 +43,6 @@ void printFightMessage(int fmsg) {
 
 int checkInteraction(player* p, gameboard* gb) {
 
-    std::cout << "moin" << std::endl;
-
     if (gb->GetValue(p->GetPy(), p->GetPx()) == 1) {
         return 0;
     }
