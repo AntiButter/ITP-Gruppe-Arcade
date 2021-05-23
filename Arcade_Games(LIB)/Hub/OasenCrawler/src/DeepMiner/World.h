@@ -18,9 +18,10 @@ public:
 
 	std::vector<std::vector<std::vector<int>>> getWorld() const;
 	int getPlayerTotalPoints();
+	int getTotalSumStart();
 private:
 	std::vector<std::vector<std::vector<int>>> world;
-	int totalSum, yLength, xLength;
+	int totalSum, yLength, xLength, totalSumStart;
 	Player* player = new Player();
 	Player* ai1Miner = new Player();
 	char money = 36;

@@ -27,6 +27,7 @@ void World::createRandomWorld() {
             for (zCounter; zCounter < 10; zCounter++) {
                 randomNumber = rand() % 9 + 1;
                 world[yCounter][xCounter][zCounter] = randomNumber;
+                totalSumStart += randomNumber;
             }
             zCounter = 0;
         }
@@ -184,6 +185,11 @@ void World::endScreen() {
 
 int World::getPlayerTotalPoints() {
     return player->GetMiner()->getTotalPoints();
+}
+
+int World::getTotalSumStart()
+{
+    return totalSumStart;
 }
 
 std::vector<std::vector<std::vector<int>>> World::getWorld() const {

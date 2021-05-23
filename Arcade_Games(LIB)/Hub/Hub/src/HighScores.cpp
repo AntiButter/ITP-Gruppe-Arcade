@@ -67,6 +67,11 @@ void Highscores::printScoreSingle(int i)
 
 void Highscores::saveScore(int gameNumber, int score)
 {
+	//cancels if score is not higher than previous highscore
+	int previousScore = stoi(gameScores[gameNumber]);
+	if (previousScore > score)
+		return;
+
 	gameScores[gameNumber] = std::to_string(score);
 	std::cout << "Sie haben einen neuen Highscore erzielt !\n\nBitte geben Sie ihren Namen ein: ";
 	std::cin >> scoreNames[gameNumber];

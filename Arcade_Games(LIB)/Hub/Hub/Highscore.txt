@@ -2,8 +2,8 @@ Oasen Crawler
 2
 Patrick
 Deep Miner
-200000
-Peter
+65
+Hans
 Fight Club
 700
 Johannes

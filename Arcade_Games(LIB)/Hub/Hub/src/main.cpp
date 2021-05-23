@@ -39,8 +39,8 @@ int main()
 		confirm = getchar();
 		if (confirm == 'y')
 		{
-			if (selected == 0) { auto vector = oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]); } //im Oasencrawler anpassen dass der score returned wird  //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
-			if (selected == 1) { deepMiner::PlayDeepMiner(); scores->saveScore(selected, 500); }
+			if (selected == 0) { auto vector = oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]); } //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
+			if (selected == 1) { auto vector = deepMiner::PlayDeepMiner(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);  }
 			if(selected == 2) { std::cout << "**Content will be available soon**"; }
 			//add new games here and increase value for highscore / slot machine
 			if (selected == 3) { scores->printScores(); }
