@@ -372,7 +372,7 @@ void Gamble::winChecker(int* array1, int* array2, int* array3, int einsatz)
 
 void Gamble::addPoints(int plus)
 {
-	std::cout << "\nYou gained " << plus << " Points!" << std::endl;
+	std::cout << "\nSie haben " << plus << " Punkte erhalten!" << std::endl;
 
 	points += plus;
 	savePoints();

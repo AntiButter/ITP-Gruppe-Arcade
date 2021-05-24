@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "OasenCrawler/OasenCrawler.h"
 #include "DeepMiner/DeepMiner.h"
 #include "HighScores.h"
@@ -11,8 +12,8 @@ int main()
 	//oasenCrawler::PlayOasenCrawler();
 	//std::cout << "Fertig";
 
-	Highscores* scores = new Highscores();
-	Gamble* gamble = new Gamble();
+	std::unique_ptr<Highscores>scores(new Highscores());
+	std::unique_ptr<Gamble>gamble(new Gamble());
 	
 	int selected = 0;
 	char confirm = 'z';
@@ -71,7 +72,5 @@ int main()
 		std::cin.ignore(10, '\n');
 		*/
 	}
-	delete scores;
-	delete gamble;
 	return 0;
 }
