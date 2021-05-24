@@ -82,7 +82,7 @@ void Gamble::slotMachine(int einsatz)
 	bool skip = false;
 	int array1[3] = {}, array2[3] = {}, array3[3] = {};
 
-	for (int loop = 0; loop < 50; loop++)
+	for (int loop = 0; loop < 51; loop++)
 	{
 		system("cls");
 		for (int i = 0; i < 9; i++)
@@ -132,6 +132,9 @@ void Gamble::slotMachine(int einsatz)
 						{
 							if (j == 3 && i == 2)
 							{
+								if (array1[0] == array2[0] && array2[0] == array3[0])
+									SetConsoleTextAttribute(hConsole, 10);
+
 								if (array1[0] < 10)
 									std::cout << " " << array1[0];
 								else
@@ -140,6 +143,9 @@ void Gamble::slotMachine(int einsatz)
 							}
 							if (j == 3 && i == 4)
 							{
+								if (array1[1] == array2[1] && array2[1] == array3[1])
+									SetConsoleTextAttribute(hConsole, 10);
+
 								if (array1[1] < 10)
 									std::cout << " " << array1[1];
 								else
@@ -148,6 +154,9 @@ void Gamble::slotMachine(int einsatz)
 							}
 							if (j == 3 && i == 6)
 							{
+								if (array1[2] == array2[2] && array2[2] == array3[2])
+									SetConsoleTextAttribute(hConsole, 10);
+
 								if (array1[2] < 10)
 									std::cout << " " << array1[2];
 								else
@@ -183,13 +192,53 @@ void Gamble::slotMachine(int einsatz)
 								continue;
 							}
 						}
-						//SetConsoleTextAttribute(hConsole, 10);
+						//wip
+						if (loop > 49)
+						{
+							if (j == 13 && i == 2)
+							{
+								if (array3[0] < 10)
+									std::cout << " " << array3[0];
+								else
+									std::cout << array3[0];
+
+								if (array1[0] == array2[0] && array2[0] == array3[0])
+									SetConsoleTextAttribute(hConsole, 7);
+
+								continue;
+							}
+							if (j == 13 && i == 4)
+							{
+								if (array3[1] < 10)
+									std::cout << " " << array3[1];
+								else
+									std::cout << array3[1];
+
+								if (array1[1] == array2[1] && array2[1] == array3[1])
+									SetConsoleTextAttribute(hConsole, 7);
+
+								continue;
+							}
+							if (j == 13 && i == 6)
+							{
+								if (array3[2] < 10)
+									std::cout << " " << array3[2];
+								else
+									std::cout << array3[2];
+
+								if (array1[2] == array2[2] && array2[2] == array3[2])
+									SetConsoleTextAttribute(hConsole, 7);
+
+								continue;
+							}
+						}
+
 						int zahl = randomValue();
 						if (zahl < 10)
 							std::cout << " " << zahl;
 						else
 							std::cout << zahl;
-						//SetConsoleTextAttribute(hConsole, 7);
+
 						if(loop == 29)
 						{
 							if (j == 3 && i == 2)
@@ -323,6 +372,8 @@ void Gamble::winChecker(int* array1, int* array2, int* array3, int einsatz)
 
 void Gamble::addPoints(int plus)
 {
+	std::cout << "\nYou gained " << plus << " Points!" << std::endl;
+
 	points += plus;
 	savePoints();
 }
