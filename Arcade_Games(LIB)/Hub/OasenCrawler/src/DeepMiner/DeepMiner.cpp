@@ -19,61 +19,45 @@ namespace deepMiner {
     {
         bool loopDone;
         int yLength, xLength;
-        int highscore = 0;
         char input;
         int totalPointsMine;
         int newScore;
 
         do {
-            do {
-                loopDone = false;
-                std::cout << "Waehle die y-Laenge deiner Mine:" << std::endl;
-                std::cin >> yLength;
-                std::cout << "Waehle die x-Laenge deiner Mine:" << std::endl;
-                std::cin >> xLength;
-                if (yLength > 1 && xLength > 1) {
-                    loopDone = true;
-                }
-                else {
-                    std::cout << "Bitte gib deiner Minenlaenge nur Werte ueber 1!" << std::endl;
-                }
-            } while (loopDone == false);
-
-            World* world = new World(yLength, xLength);
-            world->createRandomWorld();
-
-            //Points calc
-            totalPointsMine = world->getTotalSumStart();
-
-            world->chooseBotsPlayer();
-            world->gamePlayer();
-
-
-            world->endScreen();
-            //diese Ausgabe weglassen, weil wir dass eigentlich schon in der Main machen ?
-            if (world->getPlayerTotalPoints() > highscore) {
-                std::cout << "Du hast den alten Highscore von " << highscore << " Punkten geschlagen. Der neue Highscore liegt nun bei " << world->getPlayerTotalPoints() << " Punkten! Gratulation!" << std::endl;
-                highscore = world->getPlayerTotalPoints();
+            loopDone = false;
+            std::cout << "Waehle die y-Laenge deiner Mine:" << std::endl;
+            std::cin >> yLength;
+            std::cout << "Waehle die x-Laenge deiner Mine:" << std::endl;
+            std::cin >> xLength;
+            if (yLength > 1 && xLength > 1) {
+                loopDone = true;
             }
+            else {
+                std::cout << "Bitte gib deiner Minenlaenge nur Werte ueber 1!" << std::endl;
+            }
+        } while (loopDone == false);
 
-            //setzt score für unten
-            newScore = world->getPlayerTotalPoints();
+        World* world = new World(yLength, xLength);
+        world->createRandomWorld();
 
-            delete world;
-            std::cout << "Der Highscore liegt bei: " << highscore << std::endl;
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+        //Points calc
+        totalPointsMine = world->getTotalSumStart();
 
-            //Das eventuell weglassen sonst werden die Punkte für die Runde verloren gehen
-            //Oder die Gmable/Highscore objekte mitgeben und hier nach jeder Runde die Funktionen aufrufen
-            do {
-                std::cout << "Noch ein Spiel? (j)ja, (n)nein" << std::endl;
-                std::cin >> input;
-            } while (input != 'j' && input != 'n');
+        world->chooseBotsPlayer();
+        world->gamePlayer();
 
-        } while (input != 'n');
+
+        world->endScreen();
+       
+        //setzt score für unten
+        newScore = world->getPlayerTotalPoints();
+
+        delete world;
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 
         std::vector<int> vector;
         int percentage = (newScore * 100 / totalPointsMine) ;
+        std::cout << "Your Score: " << percentage << "%"<<std::endl;
         int gamblePoints = percentage * 1.34;  // = 100 points at 75% clear
         vector.push_back(percentage);
         vector.push_back(gamblePoints);

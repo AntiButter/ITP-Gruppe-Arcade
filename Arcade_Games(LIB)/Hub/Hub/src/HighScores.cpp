@@ -14,9 +14,8 @@ Highscores::~Highscores()
 
 void Highscores::loadScores()
 {
-	std::string filePath, readText;
-	filePath = queryFileName();
-	std::fstream MyReadFile(filePath);
+	std::string readText;
+	std::fstream MyReadFile("Highscore.txt");
 
 	// Für den ersten Knoten.
 
@@ -30,23 +29,6 @@ void Highscores::loadScores()
 	}
 	std::cout << std::endl << "Scores loaded successfully." << std::endl;
 	MyReadFile.close();
-}
-
-std::string Highscores::queryFileName()
-{	/*
-	std::string fileName = "x";
-	char check = 'x';
-	while (check != 'y')
-	{
-		std::cout << "Enter Name of save file: ";
-		std::cin >> fileName;
-		std::cout << "\nIs this correct?" << fileName << " \n[y]/[n]";
-		std::cin >> check;
-	}
-
-	return fileName;
-	*/
-	return "Highscore.txt";
 }
 
 void Highscores::printScores()
@@ -69,15 +51,14 @@ void Highscores::saveScore(int gameNumber, int score)
 {
 	//cancels if score is not higher than previous highscore
 	int previousScore = stoi(gameScores[gameNumber]);
-	if (previousScore > score)
+	if (previousScore >= score)
 		return;
 
 	gameScores[gameNumber] = std::to_string(score);
-	std::cout << "Sie haben einen neuen Highscore erzielt !\n\nBitte geben Sie ihren Namen ein: ";
+	std::cout << "\nSie haben einen neuen Highscore erzielt !\n\nBitte geben Sie ihren Namen ein: ";
 	std::cin >> scoreNames[gameNumber];
 
-	std::string filePath = queryFileName();
-	std::ofstream outfile(filePath);
+	std::ofstream outfile("Highscore.txt");
 	int i = 0;
 	while (i < gameNames.size())
 	{

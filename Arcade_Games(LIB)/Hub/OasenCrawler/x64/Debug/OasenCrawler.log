@@ -1,1 +1,4 @@
-﻿  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+﻿  DeepMiner.cpp
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\DeepMiner.cpp(61,26): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\DeepMiner.cpp(22,14): warning C4101: "input": Unreferenzierte lokale Variable
+  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

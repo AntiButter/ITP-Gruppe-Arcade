@@ -137,6 +137,7 @@ namespace oasenCrawler {
     {
         int fmsg = 0;
         char cont = 'a';
+        int points = 0;
         int level = 0;
 
         srand(time(NULL));
@@ -234,8 +235,7 @@ namespace oasenCrawler {
 
                 }
                 else if (checkstatus == 1) {
-                    std::cout << "Your Score: " << level << std::endl;
-                    break;
+                      break;
                 }
                 else if (checkstatus == 2) {
                     std::cout << "Do you want to continue playing? [y] [n]" << std::endl;
@@ -257,6 +257,7 @@ namespace oasenCrawler {
                     break;
                 }
             }
+            points += p->GetRelics();
             delete p;
             delete m;
             delete gb;
@@ -265,14 +266,12 @@ namespace oasenCrawler {
             }
         } while (cont == 'y');
 
-
-
-        std::cout << "Stats here" << std::endl;
+        std::cout << "Your Score: " << points << std::endl;
 
         //array für Übergabe //[0] = Score //[1] = Punkte für Gamble
         std::vector<int> vector;
-        vector.push_back(level);
-        vector.push_back(level*5);
+        vector.push_back(points);
+        vector.push_back(points *5);
         if (vector[1] > 100)
             vector[1] = 100;
 
