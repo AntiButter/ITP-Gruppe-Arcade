@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#define NOMINMAX
 #include <Windows.h>
 
 #include "playerFK.h"
@@ -67,23 +68,46 @@ void PlayerFK::setName(std::string newName)
 	name = newName;
 }
 
+int PlayerFK::getStarterFleetSize()
+{
+	return fleetSize;
+}
+
 int PlayerFK::queryFleetSize()
 {
 	int mode = 0;
 	std::cout << "\nWie gross soll die Flotte sein? [1-9]\n";
 	while (mode < 1 || mode > 9)
 	{
-		std::cin >> mode;
-		if (std::cin.fail())
+		try
 		{
-			std::cout << std::endl << "Ungultige Eingabe\n";
+			std::cin >> mode;
+			if (std::cin.fail())
+			{
+				throw(1);
+			}
+			if (mode < 1 && mode > 10)
+			{
+				throw(2);
+			}
 		}
-		if (mode == 0 || (mode > 3 && mode < 10))
+		catch (int error)
 		{
-			std::cout << "\n[INFO] Nur die Ziffern 1-9 sind erlaubt.\n";
-			std::cin.clear();
+			switch(error)
+			{
+			case 1:
+				std::cout << std::endl << "Ungultige Eingabe\n";
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				break;
+			case 2:
+				std::cout << "\n[INFO] Nur die Ziffern 1-9 sind erlaubt.\n";
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
 		}
 	}
+	fleetSize = mode;
 	return mode;
 }
 

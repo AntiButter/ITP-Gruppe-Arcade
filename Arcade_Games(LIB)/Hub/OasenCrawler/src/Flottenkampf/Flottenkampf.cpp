@@ -47,13 +47,14 @@ namespace Flottenkampf
 				}
 			}
 		}
-		delete (newPlayer);
-		delete (bot);
 		std::vector<int> vector;
-		vector.push_back(5);
-		vector.push_back(1);
+		vector.push_back(((newPlayer->getStarterFleetSize() - newPlayer->fleet.size()) * 5 + 5 * newPlayer->getStarterFleetSize()) - bot->fleet.size() * 2);
+		vector.push_back(5 * newPlayer->getStarterFleetSize());
 		if (vector[1] > 100)
 			vector[1] = 100;
+		delete (newPlayer);
+		delete (bot);
+		delete (ocean);
 		return vector;
 	}
 }

@@ -5,7 +5,7 @@ Deep Miner
 73
 ff
 Flottenkampf
-5
+45
 Dorian
 Vier Gewinnt 
 3

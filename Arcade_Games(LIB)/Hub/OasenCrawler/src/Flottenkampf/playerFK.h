@@ -22,6 +22,8 @@ class PlayerFK
 
 		void setName(std::string name);
 
+		int getStarterFleetSize();
+
 		int queryFleetSize();
 
 		void queryNewShip(WorldFK* ocean);
@@ -54,5 +56,6 @@ class PlayerFK
 		std::string name;
 
 		int cursor[2];
+		int fleetSize;
 };
 
