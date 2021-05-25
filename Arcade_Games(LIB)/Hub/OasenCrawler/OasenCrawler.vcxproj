@@ -147,6 +147,13 @@
     <ClInclude Include="src\DeepMiner\DeepMiner.h" />
     <ClInclude Include="src\DeepMiner\Player.h" />
     <ClInclude Include="src\DeepMiner\World.h" />
+    <ClInclude Include="src\Flottenkampf\Battleship.h" />
+    <ClInclude Include="src\Flottenkampf\Destroyer.h" />
+    <ClInclude Include="src\Flottenkampf\Flottenkampf.h" />
+    <ClInclude Include="src\Flottenkampf\Hunter.h" />
+    <ClInclude Include="src\Flottenkampf\playerFK.h" />
+    <ClInclude Include="src\Flottenkampf\Ship.h" />
+    <ClInclude Include="src\Flottenkampf\WorldFK.h" />
     <ClInclude Include="src\OasenCrawler\gameboard.h" />
     <ClInclude Include="src\OasenCrawler\monster.h" />
     <ClInclude Include="src\OasenCrawler\OasenCrawler.h" />
@@ -160,6 +167,13 @@
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp" />
     <ClCompile Include="src\DeepMiner\Player.cpp" />
     <ClCompile Include="src\DeepMiner\World.cpp" />
+    <ClCompile Include="src\Flottenkampf\Battleship.cpp" />
+    <ClCompile Include="src\Flottenkampf\Destroyer.cpp" />
+    <ClCompile Include="src\Flottenkampf\Flottenkampf.cpp" />
+    <ClCompile Include="src\Flottenkampf\Hunter.cpp" />
+    <ClCompile Include="src\Flottenkampf\playerFK.cpp" />
+    <ClCompile Include="src\Flottenkampf\Ship.cpp" />
+    <ClCompile Include="src\Flottenkampf\WorldFK.cpp" />
     <ClCompile Include="src\OasenCrawler\gameboard.cpp" />
     <ClCompile Include="src\OasenCrawler\monster.cpp" />
     <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp" />

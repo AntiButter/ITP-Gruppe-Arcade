@@ -22,8 +22,8 @@ public:
 private:
 	std::vector<std::vector<std::vector<int>>> world;
 	int totalSum, yLength, xLength, totalSumStart;
-	Player* player = new Player();
-	Player* ai1Miner = new Player();
+	PlayerDM* player = new PlayerDM();
+	PlayerDM* ai1Miner = new PlayerDM();
 	char money = 36;
 };
 #endif

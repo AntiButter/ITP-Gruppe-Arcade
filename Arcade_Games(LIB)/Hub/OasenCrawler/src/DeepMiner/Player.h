@@ -6,10 +6,10 @@
 #include "BotRandom.h"
 #include "BotTriple.h"
 
-class Player {
+class PlayerDM {
 public:
-	Player();
-	~Player();
+	PlayerDM();
+	~PlayerDM();
 
 	void SetMiner(Bots* choice);
 	Bots* GetMiner() const;

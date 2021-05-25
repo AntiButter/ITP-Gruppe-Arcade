@@ -48,6 +48,27 @@
     <ClInclude Include="src\OasenCrawler\playerOC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Flottenkampf\Battleship.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\Destroyer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\Hunter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\playerFK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\Ship.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\WorldFK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flottenkampf\Flottenkampf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp">
@@ -81,6 +102,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\OasenCrawler\playerOC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\Battleship.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\Destroyer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\Flottenkampf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\Hunter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\playerFK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\Ship.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flottenkampf\WorldFK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

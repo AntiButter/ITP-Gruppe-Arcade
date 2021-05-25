@@ -1,17 +1,17 @@
 #include "Player.h"
 
-Player::Player() {
+PlayerDM::PlayerDM() {
 	Miner = new BotHighest();
 }
 
-Player::~Player() {
+PlayerDM::~PlayerDM() {
 
 }
 
-void Player::SetMiner(Bots* choice) {
+void PlayerDM::SetMiner(Bots* choice) {
 	Miner = choice;
 }
 
-Bots* Player::GetMiner()const {
+Bots* PlayerDM::GetMiner()const {
 	return Miner;
 }
