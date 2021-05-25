@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\4wins\4wins.h" />
     <ClInclude Include="src\DeepMiner\BotHighest.h" />
     <ClInclude Include="src\DeepMiner\BotRandom.h" />
     <ClInclude Include="src\DeepMiner\Bots.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="src\OasenCrawler\playerOC.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\4wins\4wins.cpp" />
     <ClCompile Include="src\DeepMiner\BotHighest.cpp" />
     <ClCompile Include="src\DeepMiner\BotRandom.cpp" />
     <ClCompile Include="src\DeepMiner\Bots.cpp" />

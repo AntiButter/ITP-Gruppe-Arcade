@@ -69,6 +69,9 @@
     <ClInclude Include="src\Flottenkampf\Flottenkampf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\4wins\4wins.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Flottenkampf\WorldFK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\4wins\4wins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
