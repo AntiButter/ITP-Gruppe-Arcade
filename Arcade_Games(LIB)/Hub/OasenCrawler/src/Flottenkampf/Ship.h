@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
+#include <memory>
 
 #include "WorldFK.h"
+#include "PlayerFK.h"
 
 class WorldFK;
 
@@ -27,15 +29,15 @@ class Ship
 
 		int rollDice();
 
-		void queryPosition(WorldFK* ocean);
+		void queryPosition(std::shared_ptr<WorldFK> ocean, std::shared_ptr<PlayerFK> newPlayer);
 
 		std::string getShipType();
 
 		void setShipType(std::string signation);
 
-		int getDistance(Ship* target);
+		int getDistance(std::shared_ptr<Ship> target);
 
-		virtual void special(Ship* enemyShip) = 0;
+		virtual void special(std::shared_ptr<Ship> enemyShip) = 0;
 
 		virtual void buildShip() = 0;
 

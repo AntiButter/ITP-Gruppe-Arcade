@@ -6,7 +6,7 @@ class Hunter : public Ship
 		Hunter();
 		~Hunter();
 
-		void special(Ship* enemyShip) override;
+		void special(std::shared_ptr<Ship> enemyShip) override;
 
 		void buildShip() override;
 

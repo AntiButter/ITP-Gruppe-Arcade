@@ -11,25 +11,23 @@
 
 HANDLE hConsole3;
 
-PlayerFK::PlayerFK(WorldFK* ocean)
+PlayerFK::PlayerFK(std::shared_ptr<WorldFK> ocean)
 {
 	cursor[0] = 5;
 	cursor[1] = 8;
 	queryName();
-	createFleet(queryFleetSize(), ocean);
 }
 
-PlayerFK::PlayerFK(WorldFK* ocean, int fleetSize)
+PlayerFK::PlayerFK(std::shared_ptr<WorldFK> ocean, int fleetSize)
 {
 	setName(nameGenerator());
-	createBotFleet(fleetSize, ocean);
 }
 
 PlayerFK::~PlayerFK()
 {
 }
 
-void PlayerFK::createBotFleet(int fleetSize, WorldFK* ocean)
+void PlayerFK::createBotFleet(int fleetSize, std::shared_ptr<WorldFK> ocean)
 {
 	for (int i = fleetSize; i > 0; i--)
 	{
@@ -47,7 +45,7 @@ void PlayerFK::createBotFleet(int fleetSize, WorldFK* ocean)
 	}
 }
 
-void PlayerFK::createFleet(int fleetSize, WorldFK* ocean)
+void PlayerFK::createFleet(int fleetSize, std::shared_ptr<WorldFK> ocean)
 {
 	for (int i = 0; i < fleetSize; i++)
 	{
@@ -111,7 +109,7 @@ int PlayerFK::queryFleetSize()
 	return mode;
 }
 
-void PlayerFK::queryNewShip(WorldFK* ocean)
+void PlayerFK::queryNewShip(std::shared_ptr<WorldFK> ocean)
 {
 	hConsole3 = GetStdHandle(STD_OUTPUT_HANDLE);
 	char input = 'x';
@@ -189,26 +187,24 @@ void PlayerFK::queryNewShip(WorldFK* ocean)
 		if (input == 's' && ship != 2) { ship++; }
 	}
 	addShip(ship);
-	fleet[fleet.size() - 1]->queryPosition(ocean);
+	fleet[fleet.size() - 1]->queryPosition(ocean, shared_from_this());
 	ocean->setWorld(fleet[fleet.size() - 1]->posX, fleet[fleet.size() - 1]->posY, 1);
 }
 
 void PlayerFK::addShip(int type)
 {
-	Ship* newShip = nullptr;
-	switch (type)
+	if (type == 0)
 	{
-	case 0:
-		newShip = new Hunter();
-		break;
-	case 1:
-		newShip = new Destroyer();
-		break;
-	case 2:
-		newShip = new Battleship();
-		break;
+		 fleet.emplace_back(std::make_shared<Hunter>());
 	}
-	fleet.push_back(newShip);
+	if (type == 1)
+	{
+		fleet.emplace_back(std::make_shared<Destroyer>());
+	}
+	if (type == 2)
+	{
+		fleet.emplace_back(std::make_shared<Battleship>());
+	}
 }
 
 std::string PlayerFK::nameGenerator()
@@ -241,13 +237,13 @@ std::string PlayerFK::getName()
 	return name;
 }
 
-void PlayerFK::playerTurn(WorldFK* ocean, PlayerFK* enemy)
+void PlayerFK::playerTurn(std::shared_ptr<WorldFK> ocean, std::shared_ptr<PlayerFK> enemy)
 {
-	moveShip(fleet[queryAttackShip(this, ocean)], ocean);
-	fleet[queryAttackShip(this, ocean)]->special(enemy->fleet[queryAttackShip(enemy, ocean)]);
+	moveShip(shared_from_this()->fleet[queryAttackShip(shared_from_this(), ocean)], ocean);
+	fleet[queryAttackShip(shared_from_this(), ocean)]->special(enemy->fleet[queryAttackShip(enemy, ocean)]);
 }
 
-void PlayerFK::moveShip(Ship* target, WorldFK* ocean)
+void PlayerFK::moveShip(std::shared_ptr<Ship> target, std::shared_ptr<WorldFK> ocean)
 {
 	char lastMove;
 	int moves = 0;
@@ -331,7 +327,7 @@ void PlayerFK::moveShip(Ship* target, WorldFK* ocean)
 	}
 }
 
-int PlayerFK::queryAttackShip(PlayerFK* target, WorldFK* ocean)
+int PlayerFK::queryAttackShip(std::shared_ptr<PlayerFK> target, std::shared_ptr<WorldFK> ocean)
 {
 	int selected = 0;
 	char direction = 'x';
@@ -391,7 +387,7 @@ int PlayerFK::queryAttackShip(PlayerFK* target, WorldFK* ocean)
 	}
 }
 
-void PlayerFK::printFleet(PlayerFK* target, int x, int y)
+void PlayerFK::printFleet(std::shared_ptr<PlayerFK> target, int x, int y)
 {
 	hConsole3 = GetStdHandle(STD_OUTPUT_HANDLE);
 	int hp = 0;
@@ -438,7 +434,7 @@ void PlayerFK::moveCursor(char direction)
 	}
 }
 
-void PlayerFK::botTurn(WorldFK* ocean, PlayerFK* newPlayer)
+void PlayerFK::botTurn(std::shared_ptr<WorldFK> ocean, std::shared_ptr<PlayerFK> newPlayer)
 {
 	int randShip = rand() % fleet.size();
 	system("cls");
@@ -449,7 +445,7 @@ void PlayerFK::botTurn(WorldFK* ocean, PlayerFK* newPlayer)
 	fleet[randShip]->special(newPlayer->fleet[rand() % newPlayer->fleet.size()]);
 }
 
-void PlayerFK::moveBot(int randShip, WorldFK* ocean)
+void PlayerFK::moveBot(int randShip, std::shared_ptr<WorldFK> ocean)
 {
 	for (int i = 0; i < 3; i++)
 	{

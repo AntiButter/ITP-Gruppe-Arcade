@@ -6,7 +6,7 @@ class Battleship : public Ship
 		Battleship();
 		~Battleship();
 
-		void special(Ship* enemyShip) override;
+		void special(std::shared_ptr<Ship> enemyShip) override;
 
 		void buildShip() override;
 

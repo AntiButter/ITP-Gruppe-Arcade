@@ -3,6 +3,7 @@
 #include <time.h>
 #include <conio.h>
 #include <Windows.h>
+#include <memory>
 
 #include "Flottenkampf.h"
 #include "Ship.h"
@@ -12,15 +13,18 @@
 
 HANDLE hConsole4;
 
-void gameStartMessage(PlayerFK* newPlayer, PlayerFK* bot);
+void gameStartMessage(std::shared_ptr<PlayerFK> newPlayer, std::shared_ptr<PlayerFK> bot);
 namespace Flottenkampf
 {
 	std::vector<int> PlayFlottenkampf()
 	{
 		srand(time(NULL));
-		WorldFK* ocean = new WorldFK();
-		PlayerFK* newPlayer = new PlayerFK(ocean);
-		PlayerFK* bot = new PlayerFK(ocean, newPlayer->fleet.size());
+		std::shared_ptr<WorldFK> ocean(new WorldFK());
+		std::shared_ptr<PlayerFK> newPlayer(new PlayerFK(ocean));
+		newPlayer->createFleet(newPlayer->queryFleetSize(), ocean);
+		std::shared_ptr<PlayerFK> bot(new PlayerFK(ocean, newPlayer->fleet.size()));
+		bot->createBotFleet(newPlayer->fleet.size(), ocean);
+		//PlayerFK* bot = new PlayerFK(ocean, newPlayer->fleet.size());
 		gameStartMessage(newPlayer, bot);
 		while (newPlayer->fleet.size() > 0 && bot->fleet.size() > 0)
 		{
@@ -52,14 +56,14 @@ namespace Flottenkampf
 		vector.push_back(5 * newPlayer->getStarterFleetSize());
 		if (vector[1] > 100)
 			vector[1] = 100;
-		delete (newPlayer);
-		delete (bot);
-		delete (ocean);
+		//delete (newPlayer);
+		//delete (bot);
+		//delete (ocean);
 		return vector;
 	}
 }
 
-void gameStartMessage(PlayerFK* newPlayer, PlayerFK* bot)
+void gameStartMessage(std::shared_ptr<PlayerFK> newPlayer, std::shared_ptr<PlayerFK> bot)
 {
 	hConsole4 = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole4, 39);

@@ -5,6 +5,7 @@
 #include "playerFK.h"
 class PlayerFK;
 
+
 class WorldFK
 {
 	public:
@@ -13,7 +14,7 @@ class WorldFK
 
 		void printWorld(int cursorX, int cursorY);
 
-		void scanWorld(PlayerFK* player, PlayerFK* bot);
+		void scanWorld(std::shared_ptr<PlayerFK> newPlayer, std::shared_ptr<PlayerFK> bot);
 
 		void setWorld(int x, int y, int value);
 
