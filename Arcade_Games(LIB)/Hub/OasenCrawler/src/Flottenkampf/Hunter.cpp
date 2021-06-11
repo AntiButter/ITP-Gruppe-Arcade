@@ -13,7 +13,7 @@ Hunter::~Hunter()
 {
 }
 
-void Hunter::special(Ship* enemyShip)
+void Hunter::special(std::shared_ptr<Ship> enemyShip)
 {
 	int dice = rollDice();
 	if (dice >= 9)

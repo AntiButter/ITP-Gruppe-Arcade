@@ -13,7 +13,7 @@ Destroyer::~Destroyer()
 {
 }
 
-void Destroyer::special(Ship* enemyShip)
+void Destroyer::special(std::shared_ptr<Ship> enemyShip)
 {
 	if (rollDice() + 2 >= 10 - enemyShip->getSize())
 	{

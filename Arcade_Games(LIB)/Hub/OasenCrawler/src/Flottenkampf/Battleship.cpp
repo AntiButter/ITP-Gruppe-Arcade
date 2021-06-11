@@ -12,7 +12,7 @@ Battleship::~Battleship()
 {
 }
 
-void Battleship::special(Ship* enemyShip)
+void Battleship::special(std::shared_ptr<Ship> enemyShip)
 {
 	int newDMG = 0;
 	while (rollDice() >= 10 - enemyShip->getSize() && enemyShip->getHull() > 0)

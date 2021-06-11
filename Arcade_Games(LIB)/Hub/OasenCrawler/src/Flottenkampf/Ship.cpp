@@ -4,6 +4,7 @@
 #include <cmath>
 
 #include "Ship.h"
+#include "PlayerFK.h"
 #include <conio.h>
 
 HANDLE hConsole2;
@@ -66,7 +67,7 @@ int Ship::rollDice()
     return rand() % 10 + 1;
 }
 
-void Ship::queryPosition(WorldFK* ocean)
+void Ship::queryPosition(std::shared_ptr<WorldFK> ocean, std::shared_ptr<PlayerFK> player)
 {
     hConsole2 = GetStdHandle(STD_OUTPUT_HANDLE);
     char confirm = 'x';
@@ -80,30 +81,40 @@ void Ship::queryPosition(WorldFK* ocean)
         std::cout << "      	 [A][S][D]";
         SetConsoleTextAttribute(hConsole2, 119);
         std::cout << "\n ________________________________";
-        SetConsoleTextAttribute(hConsole2, 15);
         for (int x = 0; x < 5; x++)
         {
             SetConsoleTextAttribute(hConsole2, 119);
             std::cout << "\n|";
-            SetConsoleTextAttribute(hConsole2, 15);
             for (int y = 0; y < 15; y++)
             {
+                SetConsoleTextAttribute(hConsole2, 48);
                 if (posX == x && posY == y)
                 {
-                    SetConsoleTextAttribute(hConsole2, 16);
+                    SetConsoleTextAttribute(hConsole2, 58);
                     std::cout << " X";
-                    SetConsoleTextAttribute(hConsole2, 15);
                 }
                 else
                 {
-                    SetConsoleTextAttribute(hConsole2, 23);
-                    std::cout << " ~";
+                    for (int i = 0; i < player->fleet.size(); i++)
+                    {
+                        if (player->fleet[i]->posX == x && player->fleet[i]->posY == y)
+                        {
+                            SetConsoleTextAttribute(hConsole2, 239);
+                        }
+                    }
+                    if (rand() % 3 == 2)
+                    {
+                        std::cout << " ~";
+                    }
+                    else
+                    {
+                        std::cout << "  ";
+                    }
                     SetConsoleTextAttribute(hConsole2, 15);
                 }
             }
             SetConsoleTextAttribute(hConsole2, 119);
             std::cout << " |";
-            SetConsoleTextAttribute(hConsole2, 15);
         }
         SetConsoleTextAttribute(hConsole2, 119);
         std::cout << "\n|-------------------------------|";
@@ -178,7 +189,7 @@ void Ship::setShipType(std::string signation)
     shipType = signation;
 }
 
-int Ship::getDistance(Ship* target)
+int Ship::getDistance(std::shared_ptr<Ship> target)
 {
     int distanceX = abs(posX - target->posX);
     int distanceY = abs(posY - target->posY);
