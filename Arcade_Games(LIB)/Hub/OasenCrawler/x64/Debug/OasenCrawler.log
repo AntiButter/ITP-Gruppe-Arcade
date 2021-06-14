@@ -1,4 +1,8 @@
-﻿  OasenCrawler.cpp
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(144,19): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(102): warning C4715: "checkInteraction": Nicht alle Codepfade geben einen Wert zurück.
+﻿  15Puzzle.cpp
+C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(249,19): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(305,20): warning C4244: "Initialisierung": Konvertierung von "_Rep" in "float", möglicher Datenverlust
+          with
+          [
+              _Rep=__int64
+          ]
   OasenCrawler.vcxproj -> C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

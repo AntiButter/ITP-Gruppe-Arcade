@@ -32,9 +32,9 @@ void printPuzzle(std::vector<std::vector<int>>& puzzle, Player15* p1) {
                 std::cout << (char)186;
 
                 if (i == p1->GetPy() && j == p1->GetPx()) {
-                    SetConsoleTextAttribute(hConsole, 13);
+                    SetConsoleTextAttribute(hConsole, 2);
                     if (puzzle[i][j] == 0) {
-                        SetConsoleTextAttribute(hConsole, 215);
+                        SetConsoleTextAttribute(hConsole, 39);
                     }
                 }
 
