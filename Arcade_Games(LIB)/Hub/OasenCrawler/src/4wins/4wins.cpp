@@ -353,13 +353,31 @@ namespace FourWins
         HANDLE hConsole;
         hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
+        system("CLS");
+        std::cout << "[A][D] druecken, um durch die Spalten zu navigieren. [X] druecken, um einen Stein hineinzuwerfen." << std::endl; 
+        std::wcout << "Beliebige Taste druecken, um das Spiel zu starten!" << std::endl; 
+        _getch(); 
+
         do {
             resetBoard(gb);
             while (1) {
                 system("CLS");
                 printArrow(pos);
                 printBoard(gb);
-                
+
+                if (player == 1) {
+                    SetConsoleTextAttribute(hConsole, 4);
+                    std::cout << "Spieler " << player;
+                    SetConsoleTextAttribute(hConsole, 7);
+                    std::cout << " ist am Zug" << std::endl; 
+                }
+                else {
+                    SetConsoleTextAttribute(hConsole, 1);
+                    std::cout << "Spieler " << player;
+                    SetConsoleTextAttribute(hConsole, 7);
+                    std::cout << " ist am Zug" << std::endl;
+                }
+
                 if (wincondition(gb, 1) == 1) {
                     system("CLS");
                     printBoard(gb);

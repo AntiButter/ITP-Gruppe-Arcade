@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\15Puzzle\15Puzzle.h" />
+    <ClInclude Include="src\15Puzzle\Player15.h" />
     <ClInclude Include="src\4wins\4wins.h" />
     <ClInclude Include="src\DeepMiner\BotHighest.h" />
     <ClInclude Include="src\DeepMiner\BotRandom.h" />
@@ -161,6 +163,8 @@
     <ClInclude Include="src\OasenCrawler\playerOC.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\15Puzzle\15Puzzle.cpp" />
+    <ClCompile Include="src\15Puzzle\Player15.cpp" />
     <ClCompile Include="src\4wins\4wins.cpp" />
     <ClCompile Include="src\DeepMiner\BotHighest.cpp" />
     <ClCompile Include="src\DeepMiner\BotRandom.cpp" />

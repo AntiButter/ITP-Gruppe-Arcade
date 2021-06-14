@@ -5,6 +5,7 @@
 #include "DeepMiner/DeepMiner.h"
 #include "Flottenkampf/Flottenkampf.h"
 #include "4wins/4wins.h"
+#include "15Puzzle/15Puzzle.h"
 #include "HighScores.h"
 #include "Gamble.h"
 
@@ -33,10 +34,11 @@ int main()
 		std::cout << std::endl << "     Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Flottenkampf"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     4 Gewinnt"; selected == 3 ? scores->printScoreSingle(selected) : void();
-		std::cout << std::endl << "     Fight_Club"; selected == 4 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     15 Puzzle"; selected == 4 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     Fight_Club"; selected == 5 ? scores->printScoreSingle(selected) : void();
 		//add new games here and increase value for highscore / slot machine
-		std::cout << std::endl << "     Show Highscores"; selected == 5 ? std::cout << " < -" : std::cout << "";
-		std::cout << std::endl << "     Slot Machine"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Show Highscores"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Slot Machine"; selected == 7 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
 
 		gamble->showPoints();
@@ -48,10 +50,11 @@ int main()
 			if (selected == 1) { auto vector = deepMiner::PlayDeepMiner(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);  }
 			if (selected == 2) { auto vector = Flottenkampf::PlayFlottenkampf(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);  }
 			if (selected == 3) {FourWins::PlayFourWins();}
-			if(selected == 4) { std::cout << "**Content will be available soon**"; }
+			if (selected == 4) { Puzzle15::Play15Puzzle(); }
+			if(selected == 5) { std::cout << "**Content will be available soon**"; }
 			//add new games here and increase value for highscore / slot machine
-			if (selected == 5) { scores->printScores(); }
-			if (selected == 6) { gamble->slotMachine(0); }
+			if (selected == 6) { scores->printScores(); }
+			if (selected == 7) { gamble->slotMachine(0); }
 			confirm = getchar();
 			std::cout << "\nPress Enter to continue" << std::endl;
 			confirm = getchar();
@@ -59,7 +62,7 @@ int main()
 		}
 		if (confirm == 's')
 		{
-			if (selected != 6) //increase when adding games
+			if (selected != 7) //increase when adding games
 				selected++;
 			else
 				selected = 0;
@@ -69,7 +72,7 @@ int main()
 			if (selected != 0)
 				selected--;
 			else
-				selected = 6; //increase when adding games
+				selected = 7; //increase when adding games
 		}
 
 		//clears rest input //falls wir system cls nicht wieder einkommentieren
