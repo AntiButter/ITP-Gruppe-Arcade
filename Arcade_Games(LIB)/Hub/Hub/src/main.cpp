@@ -6,6 +6,7 @@
 #include "Flottenkampf/Flottenkampf.h"
 #include "4wins/4wins.h"
 #include "15Puzzle/15Puzzle.h"
+#include "Blackjack/Blackjack.h"
 #include "HighScores.h"
 #include "Gamble.h"
 
@@ -37,8 +38,9 @@ int main()
 		std::cout << std::endl << "     15 Puzzle"; selected == 4 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Fight_Club"; selected == 5 ? scores->printScoreSingle(selected) : void();
 		//add new games here and increase value for highscore / slot machine
-		std::cout << std::endl << "     Show Highscores"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "\n     Bestenliste"; selected == 6 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl << "     Slot Machine"; selected == 7 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Blackjack"; selected == 8 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
 
 		gamble->showPoints();
@@ -55,6 +57,7 @@ int main()
 			//add new games here and increase value for highscore / slot machine
 			if (selected == 6) { scores->printScores(); }
 			if (selected == 7) { gamble->slotMachine(0); }
+			if (selected == 8) { int newScore = Blackjack::playBlackjack(gamble->getPoints()); gamble->setPoints(newScore);  }
 			confirm = getchar();
 			std::cout << "\nPress Enter to continue" << std::endl;
 			confirm = getchar();
@@ -62,7 +65,7 @@ int main()
 		}
 		if (confirm == 's')
 		{
-			if (selected != 7) //increase when adding games
+			if (selected != 8) //increase when adding games
 				selected++;
 			else
 				selected = 0;
@@ -72,7 +75,7 @@ int main()
 			if (selected != 0)
 				selected--;
 			else
-				selected = 7; //increase when adding games
+				selected = 8; //increase when adding games
 		}
 
 		//clears rest input //falls wir system cls nicht wieder einkommentieren

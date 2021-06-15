@@ -8,7 +8,7 @@
 
 Gamble::Gamble()
 {
-	getPoints();
+	readPoints();
 }
 
 Gamble::~Gamble()
@@ -16,7 +16,7 @@ Gamble::~Gamble()
 
 }
 
-void Gamble::getPoints()
+void Gamble::readPoints()
 {
 	std::string pointsString;
 	std::fstream MyReadFile("Gamble.txt");
@@ -26,6 +26,16 @@ void Gamble::getPoints()
 	points = stoi(pointsString);
 
 	MyReadFile.close();
+}
+
+int Gamble::getPoints()
+{
+	return points;
+}
+
+void Gamble::setPoints(int newPoints)
+{
+	points = newPoints;
 }
 
 void Gamble::showPoints()

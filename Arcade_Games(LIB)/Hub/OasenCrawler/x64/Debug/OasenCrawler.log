@@ -1,8 +1,21 @@
-﻿  15Puzzle.cpp
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(249,19): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
-C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(305,20): warning C4244: "Initialisierung": Konvertierung von "_Rep" in "float", möglicher Datenverlust
+﻿  Blackjack.cpp
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\Blackjack.cpp(8,13): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
+  BlackjackCard.cpp
+  BlackjackGame.cpp
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(35,16): warning C4244: "Initialisierung": Konvertierung von "_Rep" in "unsigned int", möglicher Datenverlust
           with
           [
-              _Rep=__int64
+              _Rep=std::chrono::system_clock::rep
           ]
-  OasenCrawler.vcxproj -> C:\Users\flole\Documents\GitHub\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(51,27): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(159,27): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(239,27): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(228,7): warning C4101: "input": Unreferenzierte lokale Variable
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(290,26): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(297,22): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(319,26): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(332,26): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(345,26): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(356,22): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
+  Code wird generiert...
+  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

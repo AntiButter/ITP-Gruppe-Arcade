@@ -17,7 +17,11 @@ public:
 	//Gewinn Multiplikator
 	const int valArray[7] = { 1, 2, 5, 10, 20, 30, 50};
 
-	void getPoints();
+	void readPoints();
+
+	int getPoints();
+
+	void setPoints(int);
 
 	void showPoints();
 
