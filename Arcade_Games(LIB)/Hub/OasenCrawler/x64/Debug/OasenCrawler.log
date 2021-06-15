@@ -1,1 +1,3 @@
-﻿  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+﻿  Table.cpp
+C:\Users\jrath\OneDrive\FH Technikum Wien\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Memory\Table.h(22,16): warning C4309: "Initialisierung": Verkürzung eines konstanten Wertes
+  OasenCrawler.vcxproj -> C:\Users\jrath\OneDrive\FH Technikum Wien\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

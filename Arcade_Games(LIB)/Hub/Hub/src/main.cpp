@@ -7,6 +7,7 @@
 #include "4wins/4wins.h"
 #include "HighScores.h"
 #include "Gamble.h"
+#include "Memory/Memory.h"
 
 int main()
 {
@@ -34,9 +35,10 @@ int main()
 		std::cout << std::endl << "     Flottenkampf"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     4 Gewinnt"; selected == 3 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     Fight_Club"; selected == 4 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     Memory"; selected == 5;
 		//add new games here and increase value for highscore / slot machine
-		std::cout << std::endl << "     Show Highscores"; selected == 5 ? std::cout << " < -" : std::cout << "";
-		std::cout << std::endl << "     Slot Machine"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Show Highscores"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Slot Machine"; selected == 7 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
 
 		gamble->showPoints();
@@ -49,9 +51,10 @@ int main()
 			if (selected == 2) { auto vector = Flottenkampf::PlayFlottenkampf(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);  }
 			if (selected == 3) {FourWins::PlayFourWins();}
 			if(selected == 4) { std::cout << "**Content will be available soon**"; }
+			if (selected == 5) { memory::PlayMemory(); }
 			//add new games here and increase value for highscore / slot machine
-			if (selected == 5) { scores->printScores(); }
-			if (selected == 6) { gamble->slotMachine(0); }
+			if (selected == 6) { scores->printScores(); }
+			if (selected == 7) { gamble->slotMachine(0); }
 			confirm = getchar();
 			std::cout << "\nPress Enter to continue" << std::endl;
 			confirm = getchar();

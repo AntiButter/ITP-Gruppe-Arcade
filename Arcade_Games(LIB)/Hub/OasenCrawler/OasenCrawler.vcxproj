@@ -155,6 +155,8 @@
     <ClInclude Include="src\Flottenkampf\playerFK.h" />
     <ClInclude Include="src\Flottenkampf\Ship.h" />
     <ClInclude Include="src\Flottenkampf\WorldFK.h" />
+    <ClInclude Include="src\Memory\Memory.h" />
+    <ClInclude Include="src\Memory\Table.h" />
     <ClInclude Include="src\OasenCrawler\gameboard.h" />
     <ClInclude Include="src\OasenCrawler\monster.h" />
     <ClInclude Include="src\OasenCrawler\OasenCrawler.h" />
@@ -176,6 +178,8 @@
     <ClCompile Include="src\Flottenkampf\playerFK.cpp" />
     <ClCompile Include="src\Flottenkampf\Ship.cpp" />
     <ClCompile Include="src\Flottenkampf\WorldFK.cpp" />
+    <ClCompile Include="src\Memory\Memory.cpp" />
+    <ClCompile Include="src\Memory\Table.cpp" />
     <ClCompile Include="src\OasenCrawler\gameboard.cpp" />
     <ClCompile Include="src\OasenCrawler\monster.cpp" />
     <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp" />
