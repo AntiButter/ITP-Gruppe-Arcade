@@ -36,10 +36,10 @@ void Highscores::loadScores()
 void Highscores::printScores()
 {
 	system("cls");
-	std::cout << "Highscores:";
+	std::cout << "Highscores:" << std::endl;
 	for (int i = 0; i < gameScores.size(); i++)
 	{
-		std::cout << "\n\n" << gameNames[i] << " - " << gameScores[i] << " erzielt von " << scoreNames[i];
+		std::cout << "\n" << gameNames[i] << " - " << gameScores[i] << " erzielt von " << scoreNames[i] << std::endl;
 	}
 }
 

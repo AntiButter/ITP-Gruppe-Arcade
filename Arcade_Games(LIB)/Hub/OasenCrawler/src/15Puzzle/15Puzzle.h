@@ -3,5 +3,5 @@
 
 namespace Puzzle15
 {
-	void Play15Puzzle();
+	std::vector<int> Play15Puzzle();
 }

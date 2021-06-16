@@ -244,7 +244,7 @@ namespace Puzzle15
 {
 
 
-    void Play15Puzzle()
+    std::vector<int> Play15Puzzle()
     {
         srand(time(NULL));
 
@@ -307,6 +307,18 @@ namespace Puzzle15
         if (swapper != 5) {
             std::cout << "Das Puzzle wurde in " << seconds << " Sekunden geloest!" << std::endl;
         }
-        //return 0; 
+
+        int points = 100 - seconds;
+
+        if (points < 0)
+            points = 0;
+
+        std::vector<int> vector;
+        vector.push_back(points);
+        vector.push_back(points);
+        if (vector[1] > 100)
+            vector[1] = 100;
+
+        return vector;
     }
 }

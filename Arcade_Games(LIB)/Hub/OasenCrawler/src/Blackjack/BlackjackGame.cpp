@@ -1,4 +1,6 @@
 #include "BlackjackGame.h"
+#include <conio.h>
+
 BlackjackGame::BlackjackGame(int gamblePoints)
 {
 	//set to 100 at the beginnen ==> cost of entry also 100 (needs to be set)
@@ -97,7 +99,7 @@ void BlackjackGame::gameloop()
 			dealerRound();
 
 		//Frage ob Game vorbei, noch ein game ? Einsatz ?
-		std::cout << "Runde vorbei ! ";
+		std::cout << "Runde vorbei ! \n" << std::endl;
 		if (win == 1)
 		{
 			std::cout << "Sie haben gewonnen !" << std::endl;
@@ -117,7 +119,7 @@ void BlackjackGame::gameloop()
 		if (credits != 0)
 		{
 			std::cout << "\nWollen Sie noch einmal ihr Glueck versuchen ? \n(y = noch einmal, r = noch einmal mit dem selbem Einsatz (" << einsatz << "), x = nein)" << std::endl;
-			std::cin >> input;
+			input = _getch();
 			while (input != 'y' && input != 'x' && input != 'r') //und andere valide inputs
 			{
 				//to flush the input after a wrong input
@@ -125,7 +127,7 @@ void BlackjackGame::gameloop()
 				std::cin.ignore(10, '\n');
 
 				std::cout << "Bitte geben Sie einen validen input ein !" << std::endl;
-				std::cin >> input;
+				input = _getch();
 			}
 
 			if (input == 'y')
@@ -164,7 +166,7 @@ void BlackjackGame::playerRound()
 			{
 				std::cout << "Sie haben ein ASS gezogen !" << std::endl;
 				std::cout << "Bitte waehlen Sie den Wert des Asses aus: 'a' = 1 || 'b' = 11" << std::endl;
-				std::cin >> input;
+				input = _getch();
 				while (input != 'a' && input != 'b') //und andere valide inputs
 				{
 					//to flush the input after a wrong input
@@ -172,7 +174,7 @@ void BlackjackGame::playerRound()
 					std::cin.ignore(10, '\n');
 
 					std::cout << "Bitte geben Sie einen validen input ein !" << std::endl;
-					std::cin >> input;
+					input = _getch();
 				}
 
 				if (input == 'b')
@@ -187,7 +189,7 @@ void BlackjackGame::playerRound()
 
 		if (playerVal > 21)
 		{
-			std::cout << "BUST! Sie haben einen Kartenwert von ueber 21 erreicht" << std::endl;
+			std::cout << "\nBUST! Sie haben einen Kartenwert von ueber 21 erreicht" << std::endl;
 			win = 0;
 			playerCardValGlobal = playerVal;
 			overdraftPlayer = true;
@@ -201,7 +203,7 @@ void BlackjackGame::playerRound()
 
 
 		std::cout << "\n'x' = Stand || 'y' = Karte ziehen" << std::endl;
-		std::cin >> input;
+		input = _getch();
 		while (input != 'x' && input != 'y') //und andere valide inputs
 		{
 			//to flush the input after a wrong input
@@ -209,7 +211,7 @@ void BlackjackGame::playerRound()
 			std::cin.ignore(10, '\n');
 
 			std::cout << "Bitte geben Sie einen validen input ein !" << std::endl;
-			std::cin >> input;
+			input = _getch();
 		}
 
 		if (input == 'x')
@@ -254,7 +256,7 @@ void BlackjackGame::dealerRound()
 
 		if (dealerVal > 21)
 		{
-			std::cout << "BUST! Der Dealer hat einen Kartenwert von ueber 21 erreicht" << std::endl;
+			std::cout << "\nBUST! Der Dealer hat einen Kartenwert von ueber 21 erreicht" << std::endl;
 			win = 1;
 			break;
 		}
