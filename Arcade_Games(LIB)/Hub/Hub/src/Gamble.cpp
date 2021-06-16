@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <Windows.h>
+#include <conio.h>
 #include "Gamble.h"
 
 Gamble::Gamble()
@@ -40,7 +41,7 @@ void Gamble::setPoints(int newPoints)
 
 void Gamble::showPoints()
 {
-	std::cout << "\nCredits: "<< points << std::endl;
+	std::cout << "\nCredits: $"<< points << std::endl;
 }
 
 void Gamble::savePoints()
@@ -304,23 +305,20 @@ void Gamble::slotMachine(int einsatz)
 
 int Gamble::randomValue()
 {
-	int random = rand() % 100;
+	int random = rand() % 95;
 	int symbol = 0;
 
-	if (random < 30)
+	if (random < 40)
 		symbol = valArray[0];
-	else if (random < 50)
+	else if (random < 65)
 		symbol = valArray[1];
-	else if (random < 70)
+	else if (random < 80)
 		symbol = valArray[2];
-	else if (random < 85)
+	else if (random < 90)
 		symbol = valArray[3];
-	else if (random < 94)
-		symbol = valArray[4];
-	else if (random < 98)
-		symbol = valArray[5];
 	else
-		symbol = valArray[6];
+		symbol = valArray[4];
+
 
 	return symbol;
 }
@@ -360,16 +358,12 @@ void Gamble::winChecker(int* array1, int* array2, int* array3, int einsatz)
 
 	std::cout << "\nWollen Sie noch einmal ihr Glueck versuchen ? \n(y = noch einmal, r = noch einmal mit dem selbem Einsatz ("<< einsatz <<"), n = nein)" << std::endl;
 
-	std::cin.clear(); //this and line below are to prevent endless loop on wrong input (letters)
-	std::cin.ignore(10, '\n');
-
-	char input = getchar();
+	char input = _getch();
 
 	while (input != 'y' && input != 'r' && input != 'n')
 	{
 		std::cout << "Fehler ! Bitte geben Sie einen akzeptierten Input an !" << std::endl;
-		getchar();
-		input = getchar();
+		input = _getch();
 	}
 
 	if (input == 'y')
@@ -386,4 +380,9 @@ void Gamble::addPoints(int plus)
 
 	points += plus;
 	savePoints();
+}
+
+void Gamble::pay(int pay)
+{
+	points -= pay;
 }
