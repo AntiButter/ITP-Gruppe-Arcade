@@ -167,5 +167,8 @@
     <ClCompile Include="src\Hangman\Hangman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hangman\HangmanMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

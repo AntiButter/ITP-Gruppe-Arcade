@@ -188,6 +188,7 @@
     <ClCompile Include="src\Flottenkampf\Ship.cpp" />
     <ClCompile Include="src\Flottenkampf\WorldFK.cpp" />
     <ClCompile Include="src\Hangman\Hangman.cpp" />
+    <ClCompile Include="src\Hangman\HangmanMain.cpp" />
     <ClCompile Include="src\OasenCrawler\gameboard.cpp" />
     <ClCompile Include="src\OasenCrawler\monster.cpp" />
     <ClCompile Include="src\OasenCrawler\OasenCrawler.cpp" />

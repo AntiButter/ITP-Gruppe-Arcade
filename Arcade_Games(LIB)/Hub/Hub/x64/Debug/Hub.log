@@ -1,1 +1,6 @@
-﻿  Hub.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Hub.exe
+﻿  Gamble.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\Gamble.cpp(90,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  HighScores.cpp
+  main.cpp
+  Generating Code...
+  Hub.vcxproj -> D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Hub.exe

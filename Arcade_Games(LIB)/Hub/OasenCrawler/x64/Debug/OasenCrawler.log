@@ -1,17 +1,69 @@
-﻿  BlackjackGame.cpp
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(37,16): warning C4244: "Initialisierung": Konvertierung von "_Rep" in "unsigned int", möglicher Datenverlust
+﻿  15Puzzle.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(249,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(305,20): warning C4244: 'initializing': conversion from '_Rep' to 'float', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(311,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Player15.cpp
+  4wins.cpp
+  Blackjack.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\Blackjack.cpp(8,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  BlackjackCard.cpp
+  BlackjackGame.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(37,16): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
           with
           [
               _Rep=std::chrono::system_clock::rep
           ]
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(53,27): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(161,27): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(241,27): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(230,7): warning C4101: "input": Unreferenzierte lokale Variable
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(292,26): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(299,22): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(321,26): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(334,26): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(347,26): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(358,22): warning C4267: "=": Konvertierung von "size_t" nach "int", Datenverlust möglich
-  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(53,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(161,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(241,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(230,7): warning C4101: 'input': unreferenced local variable
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(292,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(299,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(321,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(334,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(347,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Blackjack\BlackjackGame.cpp(358,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  BotHighest.cpp
+  BotRandom.cpp
+  Bots.cpp
+  BotTriple.cpp
+  DeepMiner.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\DeepMiner.cpp(61,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\DeepMiner.cpp(22,14): warning C4101: 'input': unreferenced local variable
+  Player.cpp
+  World.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(19,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\DeepMiner\World.cpp(39,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Battleship.cpp
+  Destroyer.cpp
+  Flottenkampf.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\Flottenkampf.cpp(21,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\Flottenkampf.cpp(25,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\Flottenkampf.cpp(26,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\Flottenkampf.cpp(55,149): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Hunter.cpp
+  playerFK.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\playerFK.cpp(182,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Ship.cpp
+  WorldFK.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\WorldFK.cpp(65,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\playerFK.cpp(388): warning C4715: 'PlayerFK::queryAttackShip': not all control paths return a value
+  Compiling...
+  HangmanMain.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Hangman\HangmanMain.cpp(4,1): error C2059: syntax error: '}'
+  gameboard.cpp
+  monster.cpp
+  OasenCrawler.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(144,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  playerOC.cpp
+  Generating Code...
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(102): warning C4715: 'checkInteraction': not all control paths return a value
