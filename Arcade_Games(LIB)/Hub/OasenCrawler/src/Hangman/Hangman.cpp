@@ -44,7 +44,7 @@ void hangman::gameLoop()
 	{
 		for (std::vector<char>::const_iterator i = Output.begin(); i != Output.end(); ++i)
 		{
-			std::cout << *i << ' ';
+			std::cout << *i << ' ' << " ";
 		}
 			
 		std::cout << std::endl;
@@ -55,7 +55,14 @@ void hangman::gameLoop()
 			if (word.at(i) == guess)
 			{
 				Output[i] = guess;
-				
+				playing = false;
+				for(int i = 0; i < size; i++)
+				{
+					if (Output[i] == '-')
+					{
+						playing = true;
+					}
+				}
 			}
 		}
 	}
