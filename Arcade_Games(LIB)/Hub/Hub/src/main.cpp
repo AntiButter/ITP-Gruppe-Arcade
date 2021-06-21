@@ -11,6 +11,14 @@
 #include "HighScores.h"
 #include "Gamble.h"
 
+void Breaker()
+{
+	system("cls");
+	std::cout << "Sie haben leider nicht genuegend Punkte um dieses Spiel zu spielen !" << std::endl;
+	std::cout << "\nDruecke etwas um fortzufahren!" << std::endl;
+	_getch();
+}
+
 int main()
 {
 	//oasenCrawler::PrintMessage();
@@ -44,10 +52,47 @@ int main()
 		confirm = _getch();
 		if (confirm == 'y')
 		{
-			if (selected == 0) { auto vector = oasenCrawler::PlayOasenCrawler(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]); } //hier noch Abfrage ob score > als bisheriger ==> wenn ja saveScore Funktion
-			if (selected == 1) { gamble->pay(20); auto vector = deepMiner::PlayDeepMiner(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]); }
-			if (selected == 2) { gamble->pay(99); auto vector = Flottenkampf::PlayFlottenkampf(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);  }
-			if (selected == 3) { gamble->pay(25); auto vector = Puzzle15::Play15Puzzle(); scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]);}
+			if (selected == 0) 
+			{ 
+				auto vector = oasenCrawler::PlayOasenCrawler(); 
+				scores->saveScore(selected, vector[0]); 
+				gamble->addPoints(vector[1]);
+			} 
+			if (selected == 1) 
+			{ 
+				bool breaker = gamble->pay(20); 
+				if (breaker) 
+				{ 
+					Breaker(); 
+					continue;
+				}
+				auto vector = deepMiner::PlayDeepMiner(); 
+				scores->saveScore(selected, vector[0]); gamble->addPoints(vector[1]); 
+			}
+			if (selected == 2) 
+			{ 
+				bool breaker = gamble->pay(99); 
+				if (breaker)
+				{
+					Breaker();
+					continue;
+				}
+				auto vector = Flottenkampf::PlayFlottenkampf(); 
+				scores->saveScore(selected, vector[0]); 
+				gamble->addPoints(vector[1]);
+			}
+			if (selected == 3) 
+			{ 
+				bool breaker = gamble->pay(25); 
+				if (breaker)
+				{
+					Breaker();
+					continue;
+				}
+				auto vector = Puzzle15::Play15Puzzle(); 
+				scores->saveScore(selected, vector[0]); 
+				gamble->addPoints(vector[1]);
+			}
 			if (selected == 4) {FourWins::PlayFourWins();}
 			//add new games here and increase value for highscore / slot machine
 			if (selected == 5) { scores->printScores(); }

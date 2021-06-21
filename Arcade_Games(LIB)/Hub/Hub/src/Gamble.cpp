@@ -382,7 +382,14 @@ void Gamble::addPoints(int plus)
 	savePoints();
 }
 
-void Gamble::pay(int pay)
+bool Gamble::pay(int pay)
 {
-	points -= pay;
+	if ((points - pay) >= 0)
+	{
+		points -= pay;
+		return false;
+	}
+	else {
+		return true;
+	}
 }

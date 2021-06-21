@@ -1,12 +1,12 @@
 Oasen Crawler
-18
-Dorian
+2
+BAA
 Deep Miner
-66
-PAT
+67
+AAA
 Flottenkampf
-45
-Dorian
+0
+N/A
 15 Puzzle
-40
-Simon
+0
+N/A

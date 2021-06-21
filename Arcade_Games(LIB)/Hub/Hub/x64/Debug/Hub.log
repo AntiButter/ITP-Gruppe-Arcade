@@ -1,5 +1,2 @@
-﻿  Gamble.cpp
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\Hub\src\Gamble.cpp(91,12): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
-  main.cpp
-  Code wird generiert...
+﻿  main.cpp
   Hub.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Hub.exe

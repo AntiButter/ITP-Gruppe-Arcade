@@ -307,6 +307,10 @@ namespace Puzzle15
         if (swapper != 5) {
             std::cout << "Das Puzzle wurde in " << seconds << " Sekunden geloest!" << std::endl;
         }
+        else
+        {
+            seconds = 100;  //makes points go 0
+        }
 
         int points = 100 - seconds;
 
@@ -316,8 +320,6 @@ namespace Puzzle15
         std::vector<int> vector;
         vector.push_back(points);
         vector.push_back(points);
-        if (vector[1] > 100)
-            vector[1] = 100;
 
         return vector;
     }

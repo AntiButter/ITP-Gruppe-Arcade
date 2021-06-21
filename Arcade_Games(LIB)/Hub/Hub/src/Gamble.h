@@ -28,7 +28,7 @@ public:
 
 	void addPoints(int);
 
-	void pay(int);
+	bool pay(int);
 
 private:
 	int points;
