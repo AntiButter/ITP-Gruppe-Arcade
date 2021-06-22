@@ -29,6 +29,7 @@ int main()
 	std::unique_ptr<Gamble>gamble(new Gamble());
 	
 	int selected = 0;
+	bool cheatMenu = false;
 	char confirm = 'z';
 	while (confirm != 'q')
 	{
@@ -115,6 +116,16 @@ int main()
 				selected--;
 			else
 				selected = 7; //increase when adding games
+		}
+		else if (confirm == 'd')
+		{
+			std::cout << "\nDa ist ein versteckter hebel. Hebel aktivieren? y/n\n";
+			confirm = _getch();
+			if (selected = 7 && confirm == 'y')
+			{
+				std::cout << "\n*Click*";
+				cheatMenu = true;
+			}
 		}
 
 		//clears rest input //falls wir system cls nicht wieder einkommentieren
