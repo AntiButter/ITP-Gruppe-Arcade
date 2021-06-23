@@ -14,7 +14,9 @@ namespace memory {
 		table->printTable();
 		Sleep(5000);
 		system("CLS");
-		table->printHidden();
+		table->gameLoop();
+		
+		std::cout << "Du hast " << table->getTries() << " Versuche mehr gebraucht!" << std::endl;
 
 	}
 

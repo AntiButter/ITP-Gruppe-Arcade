@@ -3,8 +3,6 @@
 #include <random>
 #include <Windows.h>
 #include <conio.h>
-//#include <stdlib.h> 
-//#include <algorithm>
 
 Table::Table(int difficulty) {
 	switch (difficulty) {
@@ -26,6 +24,7 @@ Table::Table(int difficulty) {
 	open1 = -1;
 	open2 = -1;
 	solved = 0;
+	tries = 0;
 }
 
 Table::~Table() {
@@ -56,12 +55,15 @@ void Table::printTable() {
 	}
 }
 
-void Table::printHidden() {
+void Table::gameLoop() {
 	bool reset = false;
 
 	while (solved < (difficulty/2)) {
 		for (int i = 0; i < difficulty; i++) {
-			if (cards[i] == ' ') {
+			if (i == curserPos) {
+				std::cout << 'X';
+			}
+			else if (cards[i] == ' ') {
 				std::cout << ' ';
 			}
 			else if (open1 == i) {
@@ -72,12 +74,7 @@ void Table::printHidden() {
 				reset = true;
 			}
 			else {
-				if (i == curserPos) {
-					std::cout << 'X';
-				}
-				else {
-					std::cout << hidden;
-				}
+				std::cout << hidden;
 			}
 
 			std::cout << " ";
@@ -104,7 +101,6 @@ void Table::printHidden() {
 			case 's':
 				if (curserPos < (difficulty - 5)) {
 					curserPos += 5;
-
 				}
 				break;
 			case 'w':
@@ -115,7 +111,6 @@ void Table::printHidden() {
 			case 'a':
 				if (curserPos > 0) {
 					curserPos--;
-
 				}
 				break;
 			case 'd':
@@ -133,17 +128,22 @@ void Table::printHidden() {
 				if (open1 != -1) {
 					if (open1 != curserPos) {
 						open2 = curserPos;
+						tries++;
 					}
 				}
 				else {
 					open1 = curserPos;
 				}
-			}
-			if (open1 != -1 && open2 != -1) {
-				//??
+				curserPos = 0;
+				while (curserPos == open1 || curserPos == open2) {
+					curserPos++;
+				}
 			}
 		}
+	}	
+}
 
-	}
-		
+int Table::getTries() {
+	tries -= (difficulty/2);
+	return tries;
 }
