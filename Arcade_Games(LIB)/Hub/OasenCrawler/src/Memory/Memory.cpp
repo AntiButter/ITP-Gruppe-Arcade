@@ -4,7 +4,7 @@
 #include <windows.h>
 
 namespace memory {
-	void PlayMemory() {
+	std::vector<int> PlayMemory() {
 		int choice;
 		std::cout << "Schwierigkeit 1, 2 , 3" << std::endl;
 		std::cin >> choice;
@@ -17,7 +17,15 @@ namespace memory {
 		table->gameLoop();
 		
 		std::cout << "Du hast " << table->getTries() << " Versuche mehr gebraucht!" << std::endl;
+		
+		int points = (100 - table->getTries());
+		std::vector<int> vector;
+		vector.push_back(points);
+		vector.push_back(points * 5);
+		if (vector[1] > 100)
+			vector[1] = 100;
 
+		return vector;
 	}
 
 }

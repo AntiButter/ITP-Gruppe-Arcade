@@ -2,5 +2,5 @@
 #include <vector>
 namespace memory
 {
-	void PlayMemory();
+	std::vector<int> PlayMemory();
 }

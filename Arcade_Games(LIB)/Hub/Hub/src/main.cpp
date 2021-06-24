@@ -10,6 +10,7 @@
 #include "Blackjack/Blackjack.h"
 #include "HighScores.h"
 #include "Gamble.h"
+#include "Memory/Memory.h"
 
 void Breaker()
 {
@@ -42,10 +43,11 @@ int main()
 		std::cout << std::endl << "     [$99] Flottenkampf"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$25] 15 Puzzle"; selected == 3 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$ 0] 4 Gewinnt"; selected == 4 ? std::cout << " < -	Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
+		std::cout << std::endl << "     [$30] Memory"; selected == 5 ? scores->printScoreSingle(selected) : void();
 		//add new games here and increase value for highscore / slot machine
-		std::cout << std::endl << "\n     Bestenliste"; selected == 5 ? std::cout << " < -" : std::cout << "";
-		std::cout << std::endl << "     Einarmiger Bandit"; selected == 6 ? std::cout << " < -" : std::cout << "";
-		std::cout << std::endl << "     Blackjack"; selected == 7 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "\n     Bestenliste"; selected == 6 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Einarmiger Bandit"; selected == 7 ? std::cout << " < -" : std::cout << "";
+		std::cout << std::endl << "     Blackjack"; selected == 8 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl;
 		
 		gamble->showPoints();
@@ -95,17 +97,29 @@ int main()
 				gamble->addPoints(vector[1]);
 			}
 			if (selected == 4) {FourWins::PlayFourWins();}
+			if (selected == 5)
+			{
+				bool breaker = gamble->pay(30);
+				if (breaker)
+				{
+					Breaker();
+					continue;
+				}
+				auto vector = memory::PlayMemory();
+				scores->saveScore(selected, vector[0]);
+				gamble->addPoints(vector[1]);
+			}
 			//add new games here and increase value for highscore / slot machine
-			if (selected == 5) { scores->printScores(); }
-			if (selected == 6) { gamble->slotMachine(0); }
-			if (selected == 7) { int newScore = Blackjack::playBlackjack(gamble->getPoints()); gamble->setPoints(newScore);  }
+			if (selected == 6) { scores->printScores(); }
+			if (selected == 7) { gamble->slotMachine(0); }
+			if (selected == 8) { int newScore = Blackjack::playBlackjack(gamble->getPoints()); gamble->setPoints(newScore);  }
 
 			std::cout << "\nDruecke etwas um fortzufahren!" << std::endl;
 			confirm = _getch();
 		}
 		if (confirm == 's')
 		{
-			if (selected != 7) //increase when adding games
+			if (selected != 8) //increase when adding games
 				selected++;
 			else
 				selected = 0;
@@ -115,13 +129,13 @@ int main()
 			if (selected != 0)
 				selected--;
 			else
-				selected = 7; //increase when adding games
+				selected = 8; //increase when adding games
 		}
 		else if (confirm == 'd')
 		{
 			std::cout << "\nDa ist ein versteckter hebel. Hebel aktivieren? y/n\n";
 			confirm = _getch();
-			if (selected = 7 && confirm == 'y')
+			if (selected = 8 && confirm == 'y')
 			{
 				std::cout << "\n*Click*";
 				cheatMenu = true;
