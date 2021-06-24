@@ -257,7 +257,7 @@ namespace Puzzle15
         shuffle(puzzle);
 
         system("CLS");
-        std::cout << "[W] [A] [S] [D] zum bewegen. [L] um einen Stein zu verschieben. [X] um das Spiel abzubrechen" << std::endl; 
+        std::cout << "[W] [A] [S] [D] zum bewegen. [Enter] um einen Stein zu verschieben. [X] um das Spiel abzubrechen" << std::endl; 
         std::cout << "Beliebige Taste druecken um das Spiel zu starten" << std::endl; 
         _getch(); 
         auto start = std::chrono::high_resolution_clock::now();

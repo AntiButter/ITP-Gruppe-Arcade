@@ -46,6 +46,10 @@ void Highscores::printScores()
 void Highscores::printScoreSingle(int i)
 {
 	std::cout << " < -";
+	if (i == 4)
+	{
+		std::cout << "	";
+	}
 	std::cout << "	Highscore: " << gameScores[i] << " erzielt von " << scoreNames[i];
 }
 

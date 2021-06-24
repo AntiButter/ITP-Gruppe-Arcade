@@ -71,15 +71,7 @@ int Player15::move(std::vector<std::vector<int>>& puzzle) {
         case 'x':
             return 5;
             break;
-        case 'l':
-            /*
-            if (puzzle[((this->GetPy() * 4) + this->GetPx()) - 1] == 0 || puzzle[((this->GetPy() * 4) + this->GetPx()) + 1] == 0 || puzzle[((this->GetPy() * 4) + this->GetPx()) - 4] == 0 || puzzle[((this->GetPy() * 4) + this->GetPx()) + 4] == 0) {
-                std::cout << "gangad" << std::endl; 
-            }
-            else {
-                std::cout << "gangad ned" << std::endl; 
-            }
-            */
+        case '\r':
 
             if (this->GetPy() + 1 <= 3 && puzzle[this->GetPy() + 1][this->GetPx()] == 0) {
                 return 1; 
@@ -121,7 +113,7 @@ void Player15::swap(std::vector<std::vector<int>>& puzzle, int swapper) {
         puzzle[this->GetPy()][this->GetPx()] = 0;
     }
     else {
-        std::cout << "Unknown error" << std::endl; 
+        std::cout << "Unbekannter Fehler" << std::endl; 
     }
 
 }

@@ -20,7 +20,7 @@ void printFightMessage(int fmsg) {
         std::cout << "Du bist auf einen Gegner getroffen aber warst zu schwach." << std::endl;
         break;
     case 2:
-        std::cout << "Du bist auf einen Gegner getroffen und warst stärker, als er." << std::endl;
+        std::cout << "Du bist auf einen Gegner getroffen und warst staerker, als er." << std::endl;
         break;
     case 3:
         std::cout << "Du wurdest angegriffen, jedoch konntest du dich nicht verteidigen." << std::endl;
@@ -111,7 +111,7 @@ int terminate(player* p, gameboard* gb, monster* m, int turn) {
     }
     else if (gb->GetRelics() == 0) {
         system("CLS");
-        std::cout << "Glückwunsch, du hast alle Relikte gefunden!" << std::endl;
+        std::cout << "Glueckwunsch, du hast alle Relikte gefunden!" << std::endl;
         return 2;
     }
     else if (m->GetHp() == 0) {
@@ -121,7 +121,7 @@ int terminate(player* p, gameboard* gb, monster* m, int turn) {
     }
     else if (turn == 40) {
         system("CLS");
-        std::cout << "Du hast mehr als 40 Züge gebraucht, um alle Relikte zu finden..." << std::endl;
+        std::cout << "Du hast mehr als 40 Zuege gebraucht, um alle Relikte zu finden..." << std::endl;
         return 1;
     }
     else {
@@ -144,7 +144,7 @@ namespace oasenCrawler {
         srand(time(NULL));
         system("CLS");
         std::cout << "Nutze [W][A][S][D] um dich zu bewegen.\nFinde alle Relikte, um das Spiel zu gewinnen.\nDu verlierst:\n-wenn deine Leben auf 0 sinken\n-nach 40 Zuegen\n-wenn dich das Monster faengt" << std::endl; 
-        std::cout << "Drücke eine beliebige Taste, um das Spiel zu starten!";
+        std::cout << "Druecke eine beliebige Taste, um das Spiel zu starten!";
         _getch(); 
         do {
             int turn = 0;
@@ -226,7 +226,7 @@ namespace oasenCrawler {
                     }
                     break;
                 default:
-                    msg = "Ungültige Eingabe!";
+                    msg = "Ungueltige Eingabe!";
                     continue;
                 }
 
@@ -239,7 +239,7 @@ namespace oasenCrawler {
                       break;
                 }
                 else if (checkstatus == 2) {
-                    std::cout << "Möchtest du weiter spielen? [y] [n]" << std::endl;
+                    std::cout << "Moechtest du weiter spielen? [y] [n]" << std::endl;
 
                     while (cont != 'y' || cont != 'n') {
                         cont = _getch();
@@ -250,7 +250,7 @@ namespace oasenCrawler {
                             break;
                         }
                         else {
-                            std::cout << "invalid input" << std::endl;
+                            std::cout << "Ungueltige Eingabe" << std::endl;
                         }
                     }
                     break;

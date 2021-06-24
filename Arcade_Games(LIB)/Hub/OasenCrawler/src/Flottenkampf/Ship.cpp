@@ -102,7 +102,7 @@ void Ship::queryPosition(std::shared_ptr<WorldFK> ocean, std::shared_ptr<PlayerF
                             SetConsoleTextAttribute(hConsole2, 239);
                         }
                     }
-                    if (rand() % 10 > 7)
+                    if (rand() % 10 <= 7)
                     {
                         std::cout << " ~";
                     }

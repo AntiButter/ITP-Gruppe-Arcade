@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Table.h"
 #include <windows.h>
+#include <conio.h>
 
 namespace memory {
 	std::vector<int> PlayMemory() {
@@ -17,13 +18,12 @@ namespace memory {
 		table->gameLoop();
 		
 		std::cout << "Du hast " << table->getTries() << " Versuche mehr gebraucht!" << std::endl;
+		_getch();
 		
 		int points = (100 - table->getTries());
 		std::vector<int> vector;
 		vector.push_back(points);
-		vector.push_back(points * 5);
-		if (vector[1] > 100)
-			vector[1] = 100;
+		vector.push_back(points);
 
 		return vector;
 	}

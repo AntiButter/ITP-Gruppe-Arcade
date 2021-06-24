@@ -354,7 +354,7 @@ namespace FourWins
         hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
         system("CLS");
-        std::cout << "[A][D] druecken, um durch die Spalten zu navigieren. [X] druecken, um einen Stein hineinzuwerfen." << std::endl; 
+        std::cout << "[A][D] druecken, um durch die Spalten zu navigieren. [Enter] druecken, um einen Stein hineinzuwerfen." << std::endl; 
         std::wcout << "Beliebige Taste druecken, um das Spiel zu starten!" << std::endl; 
         _getch(); 
 
@@ -411,7 +411,7 @@ namespace FourWins
                 //std::cin >> input; 
                 input = _getch();
                 switch (input) {
-                case 'y':
+                case '\r':
                     val = 1;
                     break;
                 case 'n':

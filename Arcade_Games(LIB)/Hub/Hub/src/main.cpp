@@ -36,14 +36,14 @@ int main()
 	{
 		system("cls");
 
-		std::cout << std::endl << "Waehlen Sie bitte eine Optionen aus: (W = HOCH, S = RUNTER, Y = BESTAETIGEN, Q = BEENDEN)" << std::endl;
+		std::cout << std::endl << "Waehlen Sie bitte eine Optionen aus: (W = HOCH, S = RUNTER, \"Enter\" = BESTAETIGEN, Q = BEENDEN)" << std::endl;
 
 		std::cout << std::endl << "     [$ 0] Oasen_Crawler"; selected == 0 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$20] Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$99] Flottenkampf"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$25] 15 Puzzle"; selected == 3 ? scores->printScoreSingle(selected) : void();
-		std::cout << std::endl << "     [$ 0] 4 Gewinnt"; selected == 4 ? std::cout << " < -	Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
-		std::cout << std::endl << "     [$30] Memory"; selected == 5 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     [$30] Memory"; selected == 4 ? scores->printScoreSingle(selected) : void();
+		std::cout << std::endl << "     [$ 0] 4 Gewinnt"; selected == 5 ? std::cout << " < -	Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
 		//add new games here and increase value for highscore / slot machine
 		std::cout << std::endl << "\n     Bestenliste"; selected == 6 ? std::cout << " < -" : std::cout << "";
 		std::cout << std::endl << "     Einarmiger Bandit"; selected == 7 ? std::cout << " < -" : std::cout << "";
@@ -53,7 +53,7 @@ int main()
 		gamble->showPoints();
 
 		confirm = _getch();
-		if (confirm == 'y')
+		if (confirm == '\r')
 		{
 			if (selected == 0) 
 			{ 
@@ -96,8 +96,7 @@ int main()
 				scores->saveScore(selected, vector[0]); 
 				gamble->addPoints(vector[1]);
 			}
-			if (selected == 4) {FourWins::PlayFourWins();}
-			if (selected == 5)
+			if (selected == 4)
 			{
 				bool breaker = gamble->pay(30);
 				if (breaker)
@@ -109,6 +108,7 @@ int main()
 				scores->saveScore(selected, vector[0]);
 				gamble->addPoints(vector[1]);
 			}
+			if (selected == 5) {FourWins::PlayFourWins();}
 			//add new games here and increase value for highscore / slot machine
 			if (selected == 6) { scores->printScores(); }
 			if (selected == 7) { gamble->slotMachine(0); }
@@ -119,7 +119,7 @@ int main()
 		}
 		if (confirm == 's')
 		{
-			if (selected != 8) //increase when adding games
+			if (selected != 8) //increase when addsing games
 				selected++;
 			else
 				selected = 0;
@@ -131,11 +131,11 @@ int main()
 			else
 				selected = 8; //increase when adding games
 		}
-		else if (confirm == 'd')
+		else if (selected == 8 && confirm == 'd')
 		{
 			std::cout << "\nDa ist ein versteckter hebel. Hebel aktivieren? y/n\n";
 			confirm = _getch();
-			if (selected = 8 && confirm == 'y')
+			if (selected == 8 && confirm == '\r')
 			{
 				std::cout << "\n*Click*";
 				cheatMenu = true;
