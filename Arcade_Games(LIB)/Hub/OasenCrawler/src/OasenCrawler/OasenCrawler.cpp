@@ -17,25 +17,25 @@ void printFightMessage(int fmsg) {
         //std::cout << "Nothing happened" << std::endl;
         break;
     case 1:
-        std::cout << "You were too weak" << std::endl;
+        std::cout << "Du bist auf einen Gegner getroffen aber warst zu schwach." << std::endl;
         break;
     case 2:
-        std::cout << "You were stronger" << std::endl;
+        std::cout << "Du bist auf einen Gegner getroffen und warst stärker, als er." << std::endl;
         break;
     case 3:
-        std::cout << "Defending yourself failed" << std::endl;
+        std::cout << "Du wurdest angegriffen, jedoch konntest du dich nicht verteidigen." << std::endl;
         break;
     case 4:
-        std::cout << "Successfully defended" << std::endl;
+        std::cout << "Du wurdest angegriffen und hast den Angriff erfolgreich abgewehrt." << std::endl;
         break;
     case 5:
-        std::cout << "You were too slow" << std::endl;
+        std::cout << "Du wurdest bei der Flucht von einem Feind eingeholt." << std::endl;
         break;
     case 6:
-        std::cout << "Successfully escaped" << std::endl;
+        std::cout << "Du konntest erfolgreich vor einem Feind fliehen." << std::endl;
         break;
     default:
-        std::cout << "errorpfm" << std::endl;
+        std::cout << "Unknown Error" << std::endl;
         break;
     }
 
@@ -106,22 +106,22 @@ int terminate(player* p, gameboard* gb, monster* m, int turn) {
 
     if (p->GetHp() == 0) {
         system("CLS");
-        std::cout << "Too bad, you lost all HP!" << std::endl;
+        std::cout << "Schade, du hast alle Leben verloren!" << std::endl;
         return 1;
     }
     else if (gb->GetRelics() == 0) {
         system("CLS");
-        std::cout << "Congratulations, you found all relics!" << std::endl;
+        std::cout << "Glückwunsch, du hast alle Relikte gefunden!" << std::endl;
         return 2;
     }
     else if (m->GetHp() == 0) {
         system("CLS");
-        std::cout << "Too bad, the monster has caught you!" << std::endl;
+        std::cout << "Wie Schade, das Monster hat dich gefangen!" << std::endl;
         return 1;
     }
     else if (turn == 40) {
         system("CLS");
-        std::cout << "You took too long to win the game!" << std::endl;
+        std::cout << "Du hast mehr als 40 Züge gebraucht, um alle Relikte zu finden..." << std::endl;
         return 1;
     }
     else {
@@ -139,14 +139,18 @@ namespace oasenCrawler {
         char cont = 'a';
         int points = 0;
         int level = 0;
+        
 
         srand(time(NULL));
-
+        system("CLS");
+        std::cout << "Nutze [W][A][S][D] um dich zu bewegen.\nFinde alle Relikte, um das Spiel zu gewinnen.\nDu verlierst:\n-wenn deine Leben auf 0 sinken\n-nach 40 Zuegen\n-wenn dich das Monster faengt" << std::endl; 
+        std::cout << "Drücke eine beliebige Taste, um das Spiel zu starten!";
+        _getch(); 
         do {
             int turn = 0;
             int checkstatus = 0;
             level++;
-
+            std::string msg = "";
             player* p = new player(5);
 
             int mx = rand() % 2 + 3;
@@ -155,9 +159,6 @@ namespace oasenCrawler {
 
 
             gameboard* gb = new gameboard(p, m);
-
-            std::string msg = "Use W,A,S,D to move around\nFind all Relics to win the game\nYou lose:\n-if your HP drops to 0\n-after 40 turns\n-if the monster catches you";
-
 
             gb->generateBoard();
 
@@ -173,7 +174,7 @@ namespace oasenCrawler {
                 printFightMessage(fmsg);
                 fmsg = 0;
 
-                std::cout << "Relics left: " << gb->GetRelics() << std::endl;
+                std::cout << "uebrige Relikte: " << gb->GetRelics() << std::endl;
 
                 if (msg != "") {
                     std::cout << msg << std::endl;
@@ -191,7 +192,7 @@ namespace oasenCrawler {
                         m->MoveMonster(p->GetPx(), p->GetPy());
                     }
                     else {
-                        msg = "Moving up is not possible";
+                        msg = "Du kannst dich nicht weiter nach oben bewegen!";
                     }
                     break;
                 case 's':
@@ -201,7 +202,7 @@ namespace oasenCrawler {
                         m->MoveMonster(p->GetPx(), p->GetPy());
                     }
                     else {
-                        msg = "Moving down is not possible";
+                        msg = "Du kannst dich nicht weiter nach unten bewegen!";
                     }
                     break;
                 case 'a':
@@ -211,7 +212,7 @@ namespace oasenCrawler {
                         m->MoveMonster(p->GetPx(), p->GetPy());
                     }
                     else {
-                        msg = "Moving left is not possible";
+                        msg = "Du kannst dich nicht weiter nach links bewegen!";
                     }
                     break;
                 case 'd':
@@ -221,11 +222,11 @@ namespace oasenCrawler {
                         m->MoveMonster(p->GetPx(), p->GetPy());
                     }
                     else {
-                        msg = "Moving right is not possible";
+                        msg = "Du kannst dich nicht weiter nach rechts bewegen!";
                     }
                     break;
                 default:
-                    msg = "Invalid input";
+                    msg = "Ungültige Eingabe!";
                     continue;
                 }
 
@@ -238,16 +239,14 @@ namespace oasenCrawler {
                       break;
                 }
                 else if (checkstatus == 2) {
-                    std::cout << "Do you want to continue playing? [y] [n]" << std::endl;
+                    std::cout << "Möchtest du weiter spielen? [y] [n]" << std::endl;
 
                     while (cont != 'y' || cont != 'n') {
                         cont = _getch();
                         if (cont == 'y') {
-                            std::cout << "yeeee" << std::endl;
                             break;
                         }
                         else if (cont == 'n') {
-                            std::cout << "noo" << std::endl;
                             break;
                         }
                         else {
@@ -266,7 +265,7 @@ namespace oasenCrawler {
             }
         } while (cont == 'y');
 
-        std::cout << "Your Score: " << points << std::endl;
+        std::cout << "Dein Punktestand: " << points << std::endl;
 
         //array für Übergabe //[0] = Score //[1] = Punkte für Gamble
         std::vector<int> vector;

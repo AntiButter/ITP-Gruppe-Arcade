@@ -72,10 +72,19 @@
     <ClInclude Include="src\4wins\4wins.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Memory\Memory.h">
+    <ClInclude Include="src\15Puzzle\Player15.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Memory\Table.h">
+    <ClInclude Include="src\15Puzzle\15Puzzle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Blackjack\BlackjackCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Blackjack\BlackjackGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Blackjack\Blackjack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -137,10 +146,19 @@
     <ClCompile Include="src\4wins\4wins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Memory\Memory.cpp">
+    <ClCompile Include="src\15Puzzle\15Puzzle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Memory\Table.cpp">
+    <ClCompile Include="src\15Puzzle\Player15.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Blackjack\Blackjack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Blackjack\BlackjackCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Blackjack\BlackjackGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
