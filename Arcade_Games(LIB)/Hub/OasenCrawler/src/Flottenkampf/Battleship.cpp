@@ -5,7 +5,7 @@
 Battleship::Battleship()
 {
 	setShipType("Kreuzer");
-	buildShip();
+	buildShip(); 
 }
 
 Battleship::~Battleship()

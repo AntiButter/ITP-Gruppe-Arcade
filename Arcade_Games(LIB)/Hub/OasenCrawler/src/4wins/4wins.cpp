@@ -205,7 +205,7 @@ int move(int pos, int gb[6][7], int* p) {
                 valid = 1; 
             }
             break;
-        case 'x':
+        case '\r':
             if (gb[0][pos] == 0) {
                 placePiece(pos, gb, p); 
                 valid = 1; 
@@ -405,7 +405,7 @@ namespace FourWins
                 }
             }
 
-            std::cout << "Willst du erneut spielen? [y] [n]" << std::endl;
+            std::cout << "Willst du erneut spielen? [Enter] [n]" << std::endl;
 
             while (val == 0) {
                 //std::cin >> input; 

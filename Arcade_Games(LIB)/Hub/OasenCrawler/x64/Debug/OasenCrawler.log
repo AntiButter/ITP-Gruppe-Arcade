@@ -1,9 +1,5 @@
-﻿  15Puzzle.cpp
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(249,19): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(305,20): warning C4244: "Initialisierung": Konvertierung von "_Rep" in "float", möglicher Datenverlust
-          with
-          [
-              _Rep=__int64
-          ]
-D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\15Puzzle\15Puzzle.cpp(315,20): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
-  OasenCrawler.vcxproj -> D:\#FH Technikum Wien\#Semester 2\IT-Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+﻿  Ship.cpp
+  WorldFK.cpp
+C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Flottenkampf\WorldFK.cpp(73,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  OasenCrawler.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

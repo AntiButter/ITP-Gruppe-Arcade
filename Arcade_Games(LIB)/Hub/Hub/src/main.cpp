@@ -35,7 +35,7 @@ int main()
 	{
 		system("cls");
 
-		std::cout << std::endl << "Waehlen Sie bitte eine Optionen aus: (W = HOCH, S = RUNTER, Y = BESTAETIGEN, Q = BEENDEN)" << std::endl;
+		std::cout << std::endl << "Waehlen Sie bitte eine Optionen aus: (W = HOCH, S = RUNTER, \"Enter\" = BESTAETIGEN, Q = BEENDEN)" << std::endl;
 
 		std::cout << std::endl << "     [$ 0] Oasen_Crawler"; selected == 0 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$20] Deep_Miner"; selected == 1 ? scores->printScoreSingle(selected) : void();
@@ -51,7 +51,7 @@ int main()
 		gamble->showPoints();
 
 		confirm = _getch();
-		if (confirm == 'y')
+		if (confirm == '\r')
 		{
 			if (selected == 0) 
 			{ 
@@ -121,7 +121,7 @@ int main()
 		{
 			std::cout << "\nDa ist ein versteckter hebel. Hebel aktivieren? y/n\n";
 			confirm = _getch();
-			if (selected = 7 && confirm == 'y')
+			if (selected = 7 && confirm == '\r')
 			{
 				std::cout << "\n*Click*";
 				cheatMenu = true;

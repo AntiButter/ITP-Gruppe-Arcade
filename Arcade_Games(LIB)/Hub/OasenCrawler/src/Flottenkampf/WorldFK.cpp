@@ -49,7 +49,15 @@ void WorldFK::printWorld(int cursorX, int cursorY)
                 {
                     SetConsoleTextAttribute(hConsole, 71);
                 }
-                std::cout << " ~";
+                if (rand() % 10 > 7)
+                {
+                    std::cout << " ~";
+                }
+                else
+                {
+                    std::cout << "  ";
+                }
+                SetConsoleTextAttribute(hConsole, 15);
             }
         }
         SetConsoleTextAttribute(hConsole, 119);
