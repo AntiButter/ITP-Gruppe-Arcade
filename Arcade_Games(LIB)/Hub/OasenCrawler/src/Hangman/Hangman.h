@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <vector>
 #include <string>
-#include <iostream> 
+#include <iostream>
+#include <Windows.h>
 class hangman
 {
 public:
 	hangman();
 	~hangman();
-	void gameLoop();
+	int gameLoop();
 protected:
 
 private:
