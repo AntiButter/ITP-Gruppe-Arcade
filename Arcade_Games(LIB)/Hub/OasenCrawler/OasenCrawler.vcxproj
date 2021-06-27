@@ -161,6 +161,7 @@
     <ClInclude Include="src\Flottenkampf\Ship.h" />
     <ClInclude Include="src\Flottenkampf\WorldFK.h" />
     <ClInclude Include="src\Hangman\Hangman.h" />
+    <ClInclude Include="src\Hangman\HangmanMain.h" />
     <ClInclude Include="src\Memory\Memory.h" />
     <ClInclude Include="src\Memory\Table.h" />
     <ClInclude Include="src\OasenCrawler\gameboard.h" />

@@ -1,4 +1,4 @@
-﻿  OasenCrawler.cpp
-C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(144,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\OasenCrawler\OasenCrawler.cpp(102): warning C4715: 'checkInteraction': not all control paths return a value
-  OasenCrawler.vcxproj -> C:\Users\Dorian\source\repos\IT_Projekt\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib
+﻿  Hangman.cpp
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Hangman\Hangman.cpp(32,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\OasenCrawler\src\Hangman\Hangman.cpp(183): warning C4715: 'hangman::gameLoop': not all control paths return a value
+  OasenCrawler.vcxproj -> D:\AALercher\-FH-Lercher-\Sem2\ITP\ITP-Gruppe-Arcade\Arcade_Games(LIB)\Hub\x64\Debug\Games.lib

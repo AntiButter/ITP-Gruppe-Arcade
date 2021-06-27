@@ -3,11 +3,16 @@
 #include <iostream>
 #include <memory>
 #include "Hangman.h"
-int main()
+#include "HangmanMain.h"
+namespace HangmanMainIDC 
 {
-	int points;
-	srand(time(NULL));
-	std::unique_ptr<hangman>game(new hangman());
-	points = game->gameLoop();
-	return points;
+	int PlayHangman()
+	{
+		int points;
+		srand(time(NULL));
+		std::unique_ptr<hangman>game(new hangman());
+		points = game->gameLoop();
+		return points;
+	}
+
 }

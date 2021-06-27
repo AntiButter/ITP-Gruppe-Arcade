@@ -18,6 +18,7 @@ namespace Flottenkampf
 {
 	std::vector<int> PlayFlottenkampf()
 	{
+		system("CLS");
 		srand(time(NULL));
 		std::shared_ptr<WorldFK> ocean(new WorldFK());
 		std::shared_ptr<PlayerFK> newPlayer(new PlayerFK(ocean));

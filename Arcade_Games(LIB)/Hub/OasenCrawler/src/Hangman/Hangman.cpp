@@ -28,14 +28,15 @@ hangman::~hangman()
 }
 int hangman::gameLoop()
 {
+    system("CLS");
     int size = dictionary.size();
     int pos = rand() % size;
     bool playing = true;
     bool guessChecker = true;
-    int failCounter = 0;
+    int failCounter = 1;
     char guess;
     int rounds = 1;
-    std::string word = dictionary[pos];
+    std::string word = dictionary[45];
     std::vector<char> Output;
     std::vector<char> Guessed;
     for (int i = 0; i < word.size(); i++)
@@ -102,7 +103,6 @@ int hangman::gameLoop()
             std::cout << "Alle Leben Verloren" << std::endl;
             std::cout << "Das Wort war: " << word << std::endl;
             return 0;
-            break;
         }
         std::cout << std::endl;
         std::cout << "Runde: " << rounds << std::endl;
@@ -155,6 +155,10 @@ int hangman::gameLoop()
         if (!playing)
         {
             std::cout << "Sie haben gewonnen" << std::endl;
+            for (std::vector<char>::const_iterator i = Output.begin(); i != Output.end(); ++i)
+            {
+                std::cout << *i << ' ' << "";
+            }
             if (failCounter == 1)
             {
                 return 10;

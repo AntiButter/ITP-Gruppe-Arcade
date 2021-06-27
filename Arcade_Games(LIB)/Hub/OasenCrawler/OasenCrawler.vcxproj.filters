@@ -96,6 +96,9 @@
     <ClInclude Include="src\Hangman\Hangman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hangman\HangmanMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp">

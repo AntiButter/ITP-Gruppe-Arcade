@@ -1,0 +1,4 @@
+namespace HangmanMainIDC
+{
+	int PlayHangman();
+}
