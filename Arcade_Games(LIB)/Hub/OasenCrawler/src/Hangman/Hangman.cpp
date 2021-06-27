@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+
 hangman::hangman()
 {
     std::ifstream Dictionary;
@@ -36,7 +37,7 @@ int hangman::gameLoop()
     int failCounter = 1;
     char guess;
     int rounds = 1;
-    std::string word = dictionary[45];
+    std::string word = dictionary[pos];
     std::vector<char> Output;
     std::vector<char> Guessed;
     for (int i = 0; i < word.size(); i++)
