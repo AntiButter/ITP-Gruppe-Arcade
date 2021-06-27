@@ -87,6 +87,9 @@
     <ClInclude Include="src\Blackjack\Blackjack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hangman\Hangman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DeepMiner\DeepMiner.cpp">
@@ -159,6 +162,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Blackjack\BlackjackGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hangman\Hangman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hangman\HangmanMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
