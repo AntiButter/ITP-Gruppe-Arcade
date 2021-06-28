@@ -323,7 +323,7 @@ void BlackjackGame::dealPlayer()
 
 void BlackjackGame::dealDealer()
 {
-	int randomCard = (rand() % limit + 1);
+	int randomCard = (rand() % limit);
 
 	dealer.push_back(playCards[randomCard]);
 
@@ -336,7 +336,7 @@ void BlackjackGame::dealDealer()
 
 void BlackjackGame::dealDealerBack()
 {
-	int randomCard = (rand() % limit + 1);
+	int randomCard = (rand() % limit);
 
 	dealer.push_back(emptyCard);
 }
