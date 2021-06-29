@@ -1,9 +1,9 @@
 Oasen Crawler
-2
-BAA
+0
+N/A
 Deep Miner
-67
-AAA
+0
+N/A
 Flottenkampf
 0
 N/A
@@ -11,5 +11,5 @@ N/A
 0
 N/A
 Memory
-105
-ASA
+0
+N/A

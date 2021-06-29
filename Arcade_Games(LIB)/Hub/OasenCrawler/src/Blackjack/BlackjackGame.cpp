@@ -3,7 +3,6 @@
 
 BlackjackGame::BlackjackGame(int gamblePoints)
 {
-	//set to 100 at the beginnen ==> cost of entry also 100 (needs to be set)
 	credits = gamblePoints;
 
 	gameloop();
@@ -33,7 +32,7 @@ std::vector<BlackjackCard*>BlackjackGame::createDeck()
 		}
 	}
 
-	// obtain a time-based seed:
+	//obtain a time-based seed:
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	std::default_random_engine e(seed);
 
@@ -98,7 +97,7 @@ void BlackjackGame::gameloop()
 		if (overdraftPlayer == false)
 			dealerRound();
 
-		//Frage ob Game vorbei, noch ein game ? Einsatz ?
+		//check ob Game vorbei + abaluf dannach
 		std::cout << "Runde vorbei ! \n" << std::endl;
 		if (win == 1)
 		{
@@ -120,7 +119,7 @@ void BlackjackGame::gameloop()
 		{
 			std::cout << "\nWollen Sie noch einmal ihr Glueck versuchen ? \n(y = noch einmal, r = noch einmal mit dem selbem Einsatz (" << einsatz << "), x = nein)" << std::endl;
 			input = _getch();
-			while (input != 'y' && input != 'x' && input != 'r') //und andere valide inputs
+			while (input != 'y' && input != 'x' && input != 'r')
 			{
 				//to flush the input after a wrong input
 				std::cin.clear();
@@ -298,7 +297,7 @@ void BlackjackGame::clearVector()
 
 	size = dealer.size();
 
-	for (int j = 0; j < size-1; j++) //// jetzt nu´r für Testfall 1 weniger, weil empty card nicht gefreed werden soll
+	for (int j = 0; j < size-1; j++)
 	{
 		delete(dealer[j]);
 	}
@@ -314,7 +313,6 @@ void BlackjackGame::dealPlayer()
 
 	player.push_back(playCards[randomCard]);
 
-	//delete(playCards[randomCard]);
 	playCards.erase(playCards.begin() + randomCard);
 
 
@@ -327,7 +325,6 @@ void BlackjackGame::dealDealer()
 
 	dealer.push_back(playCards[randomCard]);
 
-	//delete(playCards[randomCard]);
 	playCards.erase(playCards.begin() + randomCard);
 
 

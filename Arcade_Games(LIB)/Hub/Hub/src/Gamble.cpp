@@ -57,7 +57,7 @@ void Gamble::slotMachine(int einsatz)
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	//check ob Einsatz nicht größer als Punkte ist bei einer WIederholung
+	//check ob Einsatz nicht größer als Punkte ist bei einer Wiederholung
 	system("cls");
 	if(einsatz != 0 && einsatz > points)
 	{
@@ -203,7 +203,6 @@ void Gamble::slotMachine(int einsatz)
 								continue;
 							}
 						}
-						//wip
 						if (loop > 49)
 						{
 							if (j == 13 && i == 2)

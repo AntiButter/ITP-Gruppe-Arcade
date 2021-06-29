@@ -12,6 +12,8 @@
 #include "Gamble.h"
 #include "Memory/Memory.h"
 #include "Hangman/HangmanMain.h"
+
+//function to cancel if the player does not have enough points
 void Breaker()
 {
 	system("cls");
@@ -22,9 +24,6 @@ void Breaker()
 
 int main()
 {
-	//oasenCrawler::PrintMessage();
-	//oasenCrawler::PlayOasenCrawler();
-	//std::cout << "Fertig";
 
 	std::unique_ptr<Highscores>scores(new Highscores());
 	std::unique_ptr<Gamble>gamble(new Gamble());
@@ -43,7 +42,7 @@ int main()
 		std::cout << std::endl << "     [$99] Flottenkampf"; selected == 2 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$25] 15 Puzzle"; selected == 3 ? scores->printScoreSingle(selected) : void();
 		std::cout << std::endl << "     [$30] Memory"; selected == 4 ? scores->printScoreSingle(selected) : void();
-		std::cout << std::endl << "     [$ 5] Hangman"; selected == 5 ? std::cout << " < -	Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
+		std::cout << std::endl << "     [$ 5] Hangman"; selected == 5 ? std::cout << " < -		Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
 		std::cout << std::endl << "     [$ 0] 4 Gewinnt"; selected == 6 ? std::cout << " < -	Zu diesem Spiel gibt es keine Bestenliste !" : std::cout << "";
 		//add new games here and increase value for highscore / slot machine
 		std::cout << std::endl << "\n     Bestenliste"; selected == 7 ? std::cout << " < -" : std::cout << "";
@@ -131,7 +130,7 @@ int main()
 		}
 		if (confirm == 's')
 		{
-			if (selected != 9) //increase when addsing games
+			if (selected != 9) //increase when adding games
 				selected++;
 			else
 				selected = 0;
@@ -153,12 +152,6 @@ int main()
 				cheatMenu = true;
 			}
 		}
-
-		//clears rest input //falls wir system cls nicht wieder einkommentieren
-		/*
-		std::cin.clear(); //this and line below are to prevent endless loop on wrong input (letters)
-		std::cin.ignore(10, '\n');
-		*/
 	}
 	return 0;
 }

@@ -29,7 +29,6 @@ private:
     int level = 1;
     player* p;
     monster* m;
-    //monster* m;
 };
 
 #endif // GAMEBOARD_H

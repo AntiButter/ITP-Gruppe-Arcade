@@ -19,7 +19,6 @@ std::vector<std::vector<std::vector<int>>> BotRandom::mine(std::vector<std::vect
 	int tempValueA = 0;
 	int tempValueB = 0;
 
-	//auto rd = std::random_device{};
 	auto rng = std::default_random_engine{ std::random_device{}() };
 	std::shuffle(std::begin(world[posY][posX]), std::end(world[posY][posX]), rng);
 

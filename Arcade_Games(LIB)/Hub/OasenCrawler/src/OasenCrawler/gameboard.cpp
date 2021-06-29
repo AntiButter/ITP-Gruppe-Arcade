@@ -7,7 +7,6 @@ gameboard::gameboard(player* pIn, monster* mIn)
 {
     p = pIn;
     m = mIn;
-    //m = new monster();
     std::cout << "Gameboard created" << std::endl;
 }
 
@@ -56,14 +55,13 @@ void gameboard::generateBoard() {
                 }
                 else if (rnum == 9) {
                     this->SetValue(x, y, gameboard::relikt);
-                    this->SetRelics(this->GetRelics() + 1); //Copyright Agile Averagepolshark
+                    this->SetRelics(this->GetRelics() + 1); 
                 }
             }
         }
     }
 
     if (this->GetRelics() == 0) {
-        //this->board[rand() % 4 + 1][rand() % 4 + 1] == gameboard::relikt;
         this->SetValue(rand() % 4 + 1, rand() % 4 + 1, gameboard::relikt);
         this->SetRelics(1);
     }

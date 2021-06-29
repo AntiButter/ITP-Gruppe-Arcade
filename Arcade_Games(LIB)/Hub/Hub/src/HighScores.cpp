@@ -7,7 +7,6 @@
 Highscores::Highscores()
 {
 	loadScores();
-	//printScores();
 }
 
 Highscores::~Highscores()
@@ -18,8 +17,6 @@ void Highscores::loadScores()
 {
 	std::string readText;
 	std::fstream MyReadFile("Highscore.txt");
-
-	// Für den ersten Knoten.
 
 	while (getline(MyReadFile, readText))
 	{
@@ -76,13 +73,13 @@ void Highscores::saveScore(int gameNumber, int score)
 	{
 		system("cls");
 		std::cout << "\nSie haben einen neuen Highscore erzielt !\n\nBitte geben Sie ihren Namen an: ";
-		if (horizontal == 1) { SetConsoleTextAttribute(hConsole, 112); };
+		if (horizontal == 1) { SetConsoleTextAttribute(hConsole, 112); }
 		std::cout << let1; SetConsoleTextAttribute(hConsole, 7);
 		if (horizontal == 2) { SetConsoleTextAttribute(hConsole, 112); };
 		std::cout << let2; SetConsoleTextAttribute(hConsole, 7);
 		if (horizontal == 3) { SetConsoleTextAttribute(hConsole, 112); };
 		std::cout << let3; SetConsoleTextAttribute(hConsole, 7);
-		//let1++;
+
 		input = _getch();
 
 		switch (input) 

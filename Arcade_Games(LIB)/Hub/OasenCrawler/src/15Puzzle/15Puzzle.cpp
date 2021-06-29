@@ -153,25 +153,7 @@ void shuffle(std::vector<std::vector<int>>& puzzle) {
                 puzzle[3][3] = temp; 
             }
         }
-    }
-
-
-
-    /*
-    for (int i = 0; i < 90; i++) {
-        rdm1 = rand() % 15;
-        temp = singlevec[rdm1];
-        singlevec[rdm1] = singlevec[rdm1 + 1];
-        singlevec[rdm1 + 1] = temp;
-    }
-
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            puzzle[i][j] = singlevec[(i * 4) + j];
-        }
-    }
-    */
-    
+    }  
     
     //Parity fix: 
     int valid = 0; 
@@ -217,26 +199,6 @@ void shuffle(std::vector<std::vector<int>>& puzzle) {
             puzzle[0][0] = puzzle[0][1];
             puzzle[0][1] = temp;
         }
-
-        /*
-        if ((row == 0 || row == 2) && inversions % 2 == 1) {
-            valid = 1;
-            std::cout << "passt1" << std::endl; 
-            std::cout << inversions << std::endl; 
-        }
-        else if ((row == 1 || row == 3) && inversions % 2 == 0) {
-            valid = 1;
-            std::cout << "passt2" << std::endl;
-            std::cout << inversions << std::endl;
-        }
-        else {
-            std::cout << "passt NICHT" << std::endl;
-
-            temp = puzzle[0][0];
-            puzzle[0][0] = puzzle[0][1];
-            puzzle[0][1] = temp;
-        }
-        */
     }
 }
 
