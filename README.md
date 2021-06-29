@@ -1,3 +1,0 @@
-# ITP-Gruppe-Arcade
-Sharkbigpol
-
